@@ -171,12 +171,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: gtq6.sct.sc-prod.net
+    servername: tr.snapchat.com
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: gtq6.sct.sc-prod.net
+        Host: tr.snapchat.com
     udp: true
 
   - name: FRANCE-🇫🇷-
@@ -205,12 +205,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: tr.snapchat.com
+    servername: m.facebook.com
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: tr.snapchat.com
+        Host: m.facebook.com
     udp: true
 
   - name: TURKEY-🇹🇷-
@@ -230,45 +230,11 @@ proxies:
         Host: gtq6.sct.sc-prod.net
     udp: true
 
-  - name: BRITAIN-🇬🇧-
-    server: uk3-full.privateip.net
-    port: 443
-    type: vmess
-    uuid: f405532f-4c4e-4c1f-b637-92a943be12e6
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: m.facebook.com
-    network: ws
-    ws-opts:
-      path: /racevpn
-      headers:
-        Host: m.facebook.com
-    udp: true
-
   - name: RUSSIA-🇷🇺-
     server: ru-full.privateip.net
     port: 443
     type: vmess
     uuid: ed1a9984-bf52-44a9-8773-98516dbcd3b0
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: graph.instagram.com
-    network: ws
-    ws-opts:
-      path: /racevpn
-      headers:
-        Host: graph.instagram.com
-    udp: true
-
-  - name: UKRAINE-🇺🇦-
-    server: ua-full.privateip.net
-    port: 443
-    type: vmess
-    uuid: 34c8cf3e-32cd-4ead-b5de-d50bad50d971
     alterId: 0
     cipher: auto
     tls: true
@@ -290,9 +256,7 @@ proxy-groups:
       - FRANCE-🇫🇷-
       - GERMANY-🇩🇪-
       - TURKEY-🇹🇷-
-      - BRITAIN-🇬🇧-
       - RUSSIA-🇷🇺-
-      - UKRAINE-🇺🇦-
       - DIRECT
 rules:
   - MATCH,RACEVPN-COM-VMESS
