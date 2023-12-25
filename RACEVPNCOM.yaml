@@ -137,7 +137,7 @@ proxies:
     sni: gtq6.sct.sc-prod.net
     udp: true
 
-  - name: CANADA-🇨🇦-
+  - name: CANA-🇨🇦-
     server: trojan-ovh-ca01.globalssh.xyz
     port: 443
     type: trojan
@@ -150,6 +150,6 @@ proxy-groups:
     type: select
     proxies:
       - NL-🇳🇱-
-      - CANADA-🇨🇦-
+      - CANA-🇨🇦-
 rules:
   - MATCH,TROJAN-DAILY-VMESS
