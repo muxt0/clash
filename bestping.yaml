@@ -137,12 +137,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: gtq6.sct.sc-prod.net
+    servername: m.facebook.com
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: gtq6.sct.sc-prod.net
+        Host: m.facebook.com
     udp: true
 proxy-groups:
   - name: RACEVPN-BEST-PING
