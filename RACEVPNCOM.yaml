@@ -1,0 +1,262 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  ipv6: false
+  use-host: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - xnotify.xboxlive.com
+    - +.battlenet.com.cn
+    - +.wotgame.cn
+    - +.wggames.cn
+    - +.wowsgame.cn
+    - +.wargaming.net
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - +.stun.*.*
+    - +.stun.*.*.*
+    - +.stun.*.*.*.*
+    - heartbeat.belkin.com
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - mesu.apple.com
+    - swscan.apple.com
+    - swquery.apple.com
+    - swdownload.apple.com
+    - swcdn.apple.com
+    - swdist.apple.com
+    - lens.l.google.com
+    - stun.l.google.com
+    - +.nflxvideo.net
+    - "*.square-enix.com"
+    - "*.finalfantasyxiv.com"
+    - "*.ffxiv.com"
+    - "*.mcdn.bilivideo.cn"
+    - +.media.dssott.com
+proxies:
+  - name: SWEDEN-🇸🇪-
+    server: se-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 2197f2e6-614f-443a-8cc3-0a3e1acca827
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: NETHERLAND-🇳🇱-
+    server: nl-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: c37eba0e-377d-4c1a-a495-0898259cc933
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: GERMANY-🇩🇪-
+    server: de-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 7d4e1c9e-4a7a-4336-b3b0-12d07b19fa42
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: FRANCE-🇫🇷-
+    server: fr-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: cfb3682f-b59f-4fb3-a84b-835825a85b77
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: FRANCE2-🇫🇷-
+    server: fr2-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 5325ab64-d529-48ae-83d2-392be9d45d95
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: TURKEY-🇹🇷-
+    server: tr-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: d9c7b1b0-699a-4b61-8797-d523eb4b6ffb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: BRITAIN-🇬🇧-
+    server: uk-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 21aeed66-0f2a-462b-8d8f-bc713070d7df
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+proxy-groups:
+  - name: RACEVPN-COM-VMESS
+    type: select
+    proxies:
+      - SWEDEN-🇸🇪-
+      - NETHERLAND-🇳🇱-
+      - GERMANY-🇩🇪-
+      - FRANCE-🇫🇷-
+      - FRANCE2-🇫🇷-
+      - TURKEY-🇹🇷-
+      - BRITAIN-🇬🇧-
+      - DIRECT
+rules:
+  - MATCH,RACEVPN-COM-VMESS
