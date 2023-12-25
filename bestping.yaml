@@ -145,7 +145,7 @@ proxies:
         Host: m.facebook.com
     udp: true
 proxy-groups:
-  - name: RACEVPN-BEST-PING
+  - name: RACEVPNCOM-BEST-PING
     type: select
     proxies:
       - vmess-ws-tls
@@ -159,4 +159,4 @@ proxy-groups:
     proxies:
       - vmess-ws-tls
 rules:
-  - MATCH,RACEVPN-BEST-PING
+  - MATCH,RACEVPNCOM-BEST-PING
