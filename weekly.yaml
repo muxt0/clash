@@ -128,11 +128,113 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: vmess-ws-tls
+  - name: NETHERLAND2-🇳🇱-
+    server: nl2-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: bc70a307-fffc-4e1e-9139-d1c47edf06c2
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: NETHERLAND-🇳🇱-
+    server: nl-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: c37eba0e-377d-4c1a-a495-0898259cc933
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: GERMANY-🇩🇪-
+    server: de-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 7d4e1c9e-4a7a-4336-b3b0-12d07b19fa42
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: FRANCE-🇫🇷-
     server: fr-full.privateip.net
     port: 443
     type: vmess
-    uuid: 3ba9807a-f4c3-4216-aeb0-be076efbbd72
+    uuid: cfb3682f-b59f-4fb3-a84b-835825a85b77
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr.snapchat.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: tr.snapchat.com
+    udp: true
+
+  - name: FRANCE2-🇫🇷-
+    server: fr2-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 5325ab64-d529-48ae-83d2-392be9d45d95
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: TURKEY-🇹🇷-
+    server: tr-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: d9c7b1b0-699a-4b61-8797-d523eb4b6ffb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: gtq6.sct.sc-prod.net
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: gtq6.sct.sc-prod.net
+    udp: true
+
+  - name: BRITAIN-🇬🇧-
+    server: uk-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 21aeed66-0f2a-462b-8d8f-bc713070d7df
     alterId: 0
     cipher: auto
     tls: true
@@ -145,18 +247,16 @@ proxies:
         Host: gtq6.sct.sc-prod.net
     udp: true
 proxy-groups:
-  - name: RACEVPN-BEST-PING
+  - name: RACEVPN-COM-VMESS
     type: select
     proxies:
-      - vmess-ws-tls
-      - BEST-PING
+      - NETHERLAND2-🇳🇱-
+      - NETHERLAND-🇳🇱-
+      - GERMANY-🇩🇪-
+      - FRANCE-🇫🇷-
+      - FRANCE2-🇫🇷-
+      - TURKEY-🇹🇷-
+      - BRITAIN-🇬🇧-
       - DIRECT
-  - name: BEST-PING
-    type: url-test
-    url: http://hi.bonds.id/ping
-    interval: 300
-    tolerance: 50
-    proxies:
-      - vmess-ws-tls
 rules:
-  - MATCH,RACEVPN-BEST-PING
+  - MATCH,RACEVPN-COM-VMESS
