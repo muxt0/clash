@@ -134,7 +134,7 @@ proxies:
     type: trojan
     password: 2bf48510-a2e6-11ee-b939-1239d0255272
     skip-cert-verify: true
-    sni: gtq6.sct.sc-prod.net
+    sni: m.facebook.com
     udp: true
 
   - name: DE-🇩🇪-
@@ -143,7 +143,7 @@ proxies:
     type: trojan
     password: 9bbd7950-a2e6-11ee-a437-1239d0255272
     skip-cert-verify: true
-    sni: gtq6.sct.sc-prod.net
+    sni: graph.instagram.com
     udp: true
 
   - name: UK-🇬🇧-
@@ -152,7 +152,7 @@ proxies:
     type: trojan
     password: da03eff0-a2e6-11ee-a433-1239d0255272
     skip-cert-verify: true
-    sni: gtq6.sct.sc-prod.net
+    sni: graph.instagram.com
     udp: true
 proxy-groups:
   - name: HOWDY-TROJAN-GO
