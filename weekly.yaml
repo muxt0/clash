@@ -162,21 +162,21 @@ proxies:
         Host: tr.snapchat.com
     udp: true
 
-  - name: GERMANY-🇩🇪-
-    server: de-full.privateip.net
+  - name: FRANCE2-🇫🇷-
+    server: fr2-full.privateip.net
     port: 443
     type: vmess
-    uuid: 7d4e1c9e-4a7a-4336-b3b0-12d07b19fa42
+    uuid: 5325ab64-d529-48ae-83d2-392be9d45d95
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: tr.snapchat.com
+    servername: gtq6.sct.sc-prod.net
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: tr.snapchat.com
+        Host: gtq6.sct.sc-prod.net
     udp: true
 
   - name: FRANCE-🇫🇷-
@@ -196,21 +196,21 @@ proxies:
         Host: tr.snapchat.com
     udp: true
 
-  - name: FRANCE2-🇫🇷-
-    server: fr2-full.privateip.net
+  - name: GERMANY-🇩🇪-
+    server: de-full.privateip.net
     port: 443
     type: vmess
-    uuid: 5325ab64-d529-48ae-83d2-392be9d45d95
+    uuid: 7d4e1c9e-4a7a-4336-b3b0-12d07b19fa42
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: gtq6.sct.sc-prod.net
+    servername: tr.snapchat.com
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: gtq6.sct.sc-prod.net
+        Host: tr.snapchat.com
     udp: true
 
   - name: TURKEY-🇹🇷-
@@ -246,17 +246,53 @@ proxies:
       headers:
         Host: gtq6.sct.sc-prod.net
     udp: true
+
+  - name: RUSSIA-🇷🇺-
+    server: ru-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: ed1a9984-bf52-44a9-8773-98516dbcd3b0
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: graph.instagram.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: graph.instagram.com
+    udp: true
+
+  - name: UKRAINE-🇺🇦-
+    server: ua-full.privateip.net
+    port: 443
+    type: vmess
+    uuid: 34c8cf3e-32cd-4ead-b5de-d50bad50d971
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: m.facebook.com
+    network: ws
+    ws-opts:
+      path: /racevpn
+      headers:
+        Host: m.facebook.com
+    udp: true
 proxy-groups:
   - name: RACEVPN-COM-VMESS
     type: select
     proxies:
       - NETHERLAND2-🇳🇱-
       - NETHERLAND-🇳🇱-
-      - GERMANY-🇩🇪-
-      - FRANCE-🇫🇷-
       - FRANCE2-🇫🇷-
+      - FRANCE-🇫🇷-
+      - GERMANY-🇩🇪-
       - TURKEY-🇹🇷-
       - BRITAIN-🇬🇧-
+      - RUSSIA-🇷🇺-
+      - UKRAINE-🇺🇦-
       - DIRECT
 rules:
   - MATCH,RACEVPN-COM-VMESS
