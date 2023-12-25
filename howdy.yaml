@@ -161,5 +161,6 @@ proxy-groups:
       - FR-🇫🇷-
       - DE-🇩🇪-
       - UK-🇬🇧-
+      - DIRECT
 rules:
   - MATCH,HOWDY-TROJAN-GO
