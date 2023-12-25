@@ -145,7 +145,7 @@ proxies:
         Host: gtq6.sct.sc-prod.net
     udp: true
 proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
+  - name: RACEVPN-BEST-PING
     type: select
     proxies:
       - vmess-ws-tls
@@ -159,4 +159,4 @@ proxy-groups:
     proxies:
       - vmess-ws-tls
 rules:
-  - MATCH,FASTSSH-SSHKIT-HOWDY
+  - MATCH,RACEVPN-BEST-PING
