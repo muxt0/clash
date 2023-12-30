@@ -507,6 +507,5 @@ rules:
 - IP-CIDR,149.154.160.0/20,Proxy
 - IP-CIDR,149.154.164.0/22,Proxy
 
-# > 最终规则
-- GEOIP,CN,DIRECT
+# > Final
 - MATCH,Proxy
