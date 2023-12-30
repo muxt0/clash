@@ -220,7 +220,6 @@ rules:
 - DOMAIN-KEYWORD,dropbox,Proxy
 - DOMAIN-SUFFIX,twimg.com,Proxy
 - DOMAIN-KEYWORD,blogspot,Proxy
-- DOMAIN-SUFFIX,oodi.iq,DIRECT
 
 # > Meta
 - DOMAIN-SUFFIX,accountkit.com,DIRECT
