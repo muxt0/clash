@@ -243,10 +243,6 @@ rules:
 - DOMAIN-SUFFIX,rocksdb.org,DIRECT
 - DOMAIN-KEYWORD,.facebook.,DIRECT
 
-# > Yandex
-- DOMAIN-SUFFIX,yadi.sk,PROXY
-- DOMAIN,disk.yandex.com,PROXY
-
 # > Speedtest
 - DOMAIN-KEYWORD,speedtest,Proxy
 - DOMAIN-SUFFIX,ooklaserver.net,Proxy
