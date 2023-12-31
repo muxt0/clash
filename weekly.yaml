@@ -132,7 +132,7 @@ proxies:
     server: nl2-full.privateip.net
     port: 443
     type: vmess
-    uuid: bc70a307-fffc-4e1e-9139-d1c47edf06c2
+    uuid: a16cc807-906e-4ca2-9aaf-6ee846787515
     alterId: 0
     cipher: auto
     tls: true
@@ -149,7 +149,7 @@ proxies:
     server: nl-full.privateip.net
     port: 443
     type: vmess
-    uuid: c37eba0e-377d-4c1a-a495-0898259cc933
+    uuid: 6930f7e2-0649-4cd0-b5e8-d533472ca478
     alterId: 0
     cipher: auto
     tls: true
@@ -234,7 +234,7 @@ proxies:
     server: uk2-full.privateip.net
     port: 443
     type: vmess
-    uuid: 2ce0199e-9946-4698-aff6-b66b6a865b7f
+    uuid: 6281b6b5-abbe-4570-a369-34c57d66a7a8
     alterId: 0
     cipher: auto
     tls: true
@@ -251,7 +251,7 @@ proxies:
     server: uk-full.privateip.net
     port: 443
     type: vmess
-    uuid: 21aeed66-0f2a-462b-8d8f-bc713070d7df
+    uuid: 4a26c7e7-ea92-4259-87d6-86833e874394
     alterId: 0
     cipher: auto
     tls: true
@@ -268,7 +268,7 @@ proxies:
     server: tr-full.privateip.net
     port: 443
     type: vmess
-    uuid: d9c7b1b0-699a-4b61-8797-d523eb4b6ffb
+    uuid: e1a5b538-c804-46c0-85e4-16404ae6a5b8
     alterId: 0
     cipher: auto
     tls: true
