@@ -128,11 +128,28 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: vmess-ws-tls
-    server: nl2-full.privateip.net
+  - name: PS2-🇵🇸-sshmax
+    server: il2-vmess.sshmax.xyz
     port: 443
     type: vmess
-    uuid: bc70a307-fffc-4e1e-9139-d1c47edf06c2
+    uuid: ceeb2685-1833-45f9-a93c-feacd66388fa
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: m.facebook.com
+    network: ws
+    ws-opts:
+      path: /sshmax
+      headers:
+        Host: m.facebook.com
+    udp: true
+
+  - name: PS-🇵🇸-sshmax
+    server: il1-vmess.sshmax.xyz
+    port: 443
+    type: vmess
+    uuid: 9e19cea7-2b66-4d5f-aeee-b7166ff278f8
     alterId: 0
     cipher: auto
     tls: true
@@ -144,20 +161,48 @@ proxies:
       headers:
         Host: m.facebook.com
     udp: true
+
+  - name: FR-🇫🇷-vpnjantit
+    server: fr1.vpnjantit.com
+    port: 10001
+    type: vmess
+    uuid: b6faec7c-a7a7-11ee-91ad-bf6dc7c908ba
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: m.facebook.com
+    network: ws
+    ws-opts:
+      path: /vpnjantit
+      headers:
+        Host: m.facebook.com
+    udp: true
+
+  - name: DE-🇩🇪-greenssh
+    server: de1-vmess.greenssh.xyz
+    port: 443
+    type: vmess
+    uuid: 728db384-fb2f-4095-80bf-c02fdbc089b2
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: m.facebook.com
+    network: ws
+    ws-opts:
+      path: /greenssh
+      headers:
+        Host: m.facebook.com
+    udp: true
 proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - vmess-ws-tls
-      - BEST-PING
-      - DIRECT
-  - name: BEST-PING
-    type: url-test
-    url: http://hi.bonds.id/ping
-    interval: 300
-    tolerance: 50
-    proxies:
-      - vmess-ws-tls
+      - PS2-🇵🇸-sshmax
+      - PS-🇵🇸-sshmax
+      - FR-🇫🇷-vpnjantit
+      - DE-🇩🇪-greenssh
 rules:
 # (Proxy)
 # > ABC
