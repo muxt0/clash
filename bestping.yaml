@@ -132,7 +132,7 @@ proxies:
     server: nl2-full.privateip.net
     port: 443
     type: vmess
-    uuid: bc70a307-fffc-4e1e-9139-d1c47edf06c2
+    uuid: a16cc807-906e-4ca2-9aaf-6ee846787515
     alterId: 0
     cipher: auto
     tls: true
