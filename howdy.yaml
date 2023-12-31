@@ -132,7 +132,7 @@ proxies:
     server: fr1.test3.net
     port: 443
     type: trojan
-    password: 2bf48510-a2e6-11ee-b939-1239d0255272
+    password: 2bf48510-a2e6-11ee-b939-1239d0255270
     skip-cert-verify: true
     sni: m.facebook.com
     udp: true
@@ -141,7 +141,7 @@ proxies:
     server: de1.test3.net
     port: 443
     type: trojan
-    password: 9bbd7950-a2e6-11ee-a437-1239d0255272
+    password: 9bbd7950-a2e6-11ee-a437-1239d0255270
     skip-cert-verify: true
     sni: graph.instagram.com
     udp: true
@@ -150,7 +150,7 @@ proxies:
     server: uk1.test3.net
     port: 443
     type: trojan
-    password: da03eff0-a2e6-11ee-a433-1239d0255272
+    password: da03eff0-a2e6-11ee-a433-1239d0255270
     skip-cert-verify: true
     sni: graph.instagram.com
     udp: true
