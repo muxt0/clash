@@ -164,33 +164,9 @@ rules:
 - DOMAIN-SUFFIX,edgedatg.com,Proxy
 - DOMAIN-SUFFIX,go.com,Proxy
 
-# > Amazon Prime Video
-- DOMAIN-SUFFIX,aiv-cdn.net,Proxy
-- DOMAIN-SUFFIX,amazonaws.com,Proxy
-- DOMAIN-SUFFIX,amazonvideo.com,Proxy
-- DOMAIN-SUFFIX,llnwd.net,Proxy
-
-# > BBC
-- DOMAIN-KEYWORD,bbcfmt,Proxy
-- DOMAIN-KEYWORD,co.uk,Proxy
-- DOMAIN-KEYWORD,uk-live,Proxy
-- DOMAIN-SUFFIX,bbc.co,Proxy
-- DOMAIN-SUFFIX,bbc.co.uk,Proxy
-- DOMAIN-SUFFIX,bbc.com,Proxy
-- DOMAIN-SUFFIX,bbci.co,Proxy
-- DOMAIN-SUFFIX,bbci.co.uk,Proxy
-
 # > Epicgames
 - DOMAIN-KEYWORD,epicgames,Proxy
 - DOMAIN-SUFFIX,helpshift.com,Proxy
-
-# > Spotify
-- DOMAIN-KEYWORD,spotify,Proxy
-- DOMAIN-SUFFIX,scdn.co,Proxy
-- DOMAIN-SUFFIX,spoti.fi,Proxy
-
-# > viuTV
-- DOMAIN-SUFFIX,viu.tv,Proxy
 
 # > Youtube
 - DOMAIN-KEYWORD,youtube,Proxy
@@ -209,9 +185,10 @@ rules:
 - DOMAIN-SUFFIX,whatsapp.org,DIRECT
 - DOMAIN-SUFFIX,whatsapp.tv.com,DIRECT
 - DOMAIN-SUFFIX,whatsappbrand.com,DIRECT
+- IP-CIDR,66.111.48.0/22,DIRECT
 
 # > 抗 DNS 污染 
-- DOMAIN-KEYWORD,whatsapp,DIRECT
+- DOMAIN-KEYWORD,.whatsapp.,DIRECT
 - DOMAIN-KEYWORD,instagram,DIRECT
 - DOMAIN-KEYWORD,amazon,Proxy
 - DOMAIN-KEYWORD,google,Proxy
@@ -223,6 +200,7 @@ rules:
 
 # > Meta
 - DOMAIN-SUFFIX,accountkit.com,DIRECT
+- DOMAIN-SUFFIX,facebook.com,DIRECT
 - DOMAIN-SUFFIX,cdninstagram.com,DIRECT
 - DOMAIN-SUFFIX,f8.com,DIRECT
 - DOMAIN-SUFFIX,facebookmail.com,DIRECT
@@ -240,7 +218,8 @@ rules:
 - DOMAIN-SUFFIX,oculuscdn.com,DIRECT
 - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
 - DOMAIN-SUFFIX,rocksdb.org,DIRECT
-- DOMAIN-KEYWORD,.facebook.,DIRECT
+- DOMAIN-KEYWORD,.facebook.com,DIRECT
+- DOMAIN-KEYWORD,.fbcdn.net,DIRECT
 
 # > Speedtest
 - DOMAIN-KEYWORD,speedtest,Proxy
@@ -266,7 +245,6 @@ rules:
 - DOMAIN-SUFFIX,armorgames.com,Proxy
 - DOMAIN-SUFFIX,aspnetcdn.com,Proxy
 - DOMAIN-SUFFIX,att.com,Proxy
-- DOMAIN-SUFFIX,awsstatic.com,Proxy
 - DOMAIN-SUFFIX,azureedge.net,Proxy
 - DOMAIN-SUFFIX,azurewebsites.net,Proxy
 - DOMAIN-SUFFIX,bing.com,Proxy
@@ -288,15 +266,6 @@ rules:
 - DOMAIN-SUFFIX,cachefly.net,Proxy
 - DOMAIN-SUFFIX,chromium.org,Proxy
 - DOMAIN-SUFFIX,cl.ly,Proxy
-- DOMAIN-SUFFIX,cloudflare.com,Proxy
-- DOMAIN-SUFFIX,cloudfront.net,Proxy
-- DOMAIN-SUFFIX,cloudmagic.com,Proxy
-- DOMAIN-SUFFIX,cmail19.com,Proxy
-- DOMAIN-SUFFIX,cnet.com,Proxy
-- DOMAIN-SUFFIX,cocoapods.org,Proxy
-- DOMAIN-SUFFIX,comodoca.com,Proxy
-- DOMAIN-SUFFIX,crashlytics.com,Proxy
-- DOMAIN-SUFFIX,culturedcode.com,Proxy
 - DOMAIN-SUFFIX,d.pr,Proxy
 - DOMAIN-SUFFIX,danilo.to,Proxy
 - DOMAIN-SUFFIX,dayone.me,Proxy
@@ -321,7 +290,6 @@ rules:
 - DOMAIN-SUFFIX,evernote.com,Proxy
 - DOMAIN-SUFFIX,fabric.io,Proxy
 - DOMAIN-SUFFIX,fast.com,Proxy
-- DOMAIN-SUFFIX,fastly.net,Proxy
 - DOMAIN-SUFFIX,fc2.com,Proxy
 - DOMAIN-SUFFIX,feedburner.com,Proxy
 - DOMAIN-SUFFIX,feedly.com,Proxy
@@ -331,26 +299,6 @@ rules:
 - DOMAIN-SUFFIX,flexibits.com,Proxy
 - DOMAIN-SUFFIX,flickr.com,Proxy
 - DOMAIN-SUFFIX,flipboard.com,Proxy
-- DOMAIN-SUFFIX,g.co,Proxy
-- DOMAIN-SUFFIX,gabia.net,Proxy
-- DOMAIN-SUFFIX,geni.us,Proxy
-- DOMAIN-SUFFIX,gfx.ms,Proxy
-- DOMAIN-SUFFIX,ggpht.com,Proxy
-- DOMAIN-SUFFIX,ghostnoteapp.com,Proxy
-- DOMAIN-SUFFIX,git.io,Proxy
-- DOMAIN-KEYWORD,github,Proxy
-- DOMAIN-SUFFIX,globalsign.com,Proxy
-- DOMAIN-SUFFIX,gmodules.com,Proxy
-- DOMAIN-SUFFIX,godaddy.com,Proxy
-- DOMAIN-SUFFIX,golang.org,Proxy
-- DOMAIN-SUFFIX,gongm.in,Proxy
-- DOMAIN-SUFFIX,goo.gl,Proxy
-- DOMAIN-SUFFIX,goodreaders.com,Proxy
-- DOMAIN-SUFFIX,goodreads.com,Proxy
-- DOMAIN-SUFFIX,gravatar.com,Proxy
-- DOMAIN-SUFFIX,gstatic.com,Proxy
-- DOMAIN-SUFFIX,gvt0.com,Proxy
-- DOMAIN-SUFFIX,hockeyapp.net,Proxy
 - DOMAIN-SUFFIX,hotmail.com,Proxy
 - DOMAIN-SUFFIX,icons8.com,Proxy
 - DOMAIN-SUFFIX,ifixit.com,Proxy
