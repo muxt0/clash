@@ -186,6 +186,7 @@ rules:
 - DOMAIN-SUFFIX,whatsapp.org,DIRECT
 - DOMAIN-SUFFIX,whatsapp.tv.com,DIRECT
 - DOMAIN-SUFFIX,whatsappbrand.com,DIRECT
+- DOMAIN,ac9293e5fb5d2d1d2.awsglobalaccelerator.com,DIRECT
 
 - IP-CIDR,66.111.48.0/32,DIRECT
 - IP-CIDR,3.33.221.48/32,DIRECT
