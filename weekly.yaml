@@ -358,13 +358,14 @@ rules:
 - DOMAIN-SUFFIX,whatsapp-plus.net,DIRECT
 - DOMAIN-SUFFIX,whatsapp.cc,DIRECT
 - DOMAIN-SUFFIX,whatsapp.com,DIRECT
+- DOMAIN-SUFFIX,whatsapp.net,DIRECT
 - DOMAIN-SUFFIX,whatsapp.info,DIRECT
 - DOMAIN-SUFFIX,whatsapp.org,DIRECT
 - DOMAIN-SUFFIX,whatsapp.tv.com,DIRECT
 - DOMAIN-SUFFIX,whatsappbrand.com,DIRECT
 
 # > 抗 DNS 污染 
-- DOMAIN-KEYWORD,whatsapp,DIRECT
+- DOMAIN-KEYWORD,.whatsapp.,DIRECT
 - DOMAIN-KEYWORD,instagram,DIRECT
 - DOMAIN-KEYWORD,amazon,Proxy
 - DOMAIN-KEYWORD,google,Proxy
@@ -394,6 +395,7 @@ rules:
 - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
 - DOMAIN-SUFFIX,rocksdb.org,DIRECT
 - DOMAIN-KEYWORD,.facebook.,DIRECT
+- DOMAIN-KEYWORD,.fbcdn.net.,DIRECT
 
 # > Speedtest
 - DOMAIN-KEYWORD,speedtest,Proxy
