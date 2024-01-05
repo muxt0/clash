@@ -273,12 +273,12 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: gtq6.sct.sc-prod.net
+    servername: m.facebook.com
     network: ws
     ws-opts:
       path: /racevpn
       headers:
-        Host: gtq6.sct.sc-prod.net
+        Host: m.facebook.com
     udp: true
 
   - name: KZ-🇰🇿-
@@ -395,7 +395,7 @@ rules:
 - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
 - DOMAIN-SUFFIX,rocksdb.org,DIRECT
 - DOMAIN-KEYWORD,.facebook.,DIRECT
-- DOMAIN-KEYWORD,.fbcdn.net.,DIRECT
+- DOMAIN-KEYWORD,.fbcdn.,DIRECT
 
 # > Speedtest
 - DOMAIN-KEYWORD,speedtest,Proxy
