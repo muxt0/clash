@@ -129,10 +129,10 @@ dns:
     - +.media.dssott.com
 proxies:
   - name: vmess-ws-tls
-    server: nl-full.privateip.net
+    server: fr2-full.privateip.net
     port: 443
     type: vmess
-    uuid: 6930f7e2-0649-4cd0-b5e8-d533472ca478
+    uuid: 7dd9b2d3-733f-4da2-9a6c-c03af74928df
     alterId: 0
     cipher: auto
     tls: true
