@@ -123,9 +123,6 @@ rules:
  - DOMAIN-SUFFIX,fbsbx.com,DIRECT
  - DOMAIN-SUFFIX,fbworkmail.com,DIRECT
  - DOMAIN-SUFFIX,instagram.com,DIRECT
- - DOMAIN-SUFFIX,m.me,REJECT
- - DOMAIN-SUFFIX,msngr.com,REJECT
- - DOMAIN-SUFFIX,messenger.com,REJECT
  - DOMAIN-SUFFIX,oculus.com,DIRECT
  - DOMAIN-SUFFIX,oculuscdn.com,DIRECT
  - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
