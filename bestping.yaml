@@ -129,6 +129,9 @@ rules:
  - DOMAIN-SUFFIX,oculuscdn.com,DIRECT
  - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
  - DOMAIN-SUFFIX,rocksdb.org,DIRECT
+ - DOMAIN-SUFFIX,m.me,DIRECT
+ - DOMAIN-SUFFIX,msngr.com,DIRECT
+ - DOMAIN-SUFFIX,messenger.com,DIRECT
  - DOMAIN-KEYWORD,.facebook.,DIRECT
  - DOMAIN-KEYWORD,.fbcdn.,DIRECT
 
