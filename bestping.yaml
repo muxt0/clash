@@ -36,7 +36,7 @@ experimental:
   interface-name: en0
 
 proxies:
-  - {name: vmess-ws-tls, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: 7f2f6b47-7ca4-4b8b-b3c2-488e66398da9, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
+  - {name: vmess-ws-tls, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 06fd8748-334a-4bef-8796-d300d9d9fb5f, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
 
 proxy-groups:
   - name: Proxy
