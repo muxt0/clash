@@ -41,7 +41,7 @@ proxies:
   - {name: DE3-🇩🇪-, server: de3-full.privateip.net, port: 443, type: vmess, uuid: 4f969c26-b8eb-49ba-bd60-1fc5151fe2aa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
   - {name: TR-🇹🇷-, server: tr-full.privateip.net, port: 443, type: vmess, uuid: 7eefd7bc-fbc5-4050-be23-ad3190a939bd, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 06fd8748-334a-4bef-8796-d300d9d9fb5f, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: FR-🇫🇷-, server: fr-full.privateip.net, port: 443, type: vmess, uuid: 98a1885d-27fd-4b6b-9cc0-6c9da8c1431c, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
+  - {name: FR-🇫🇷-, server: fr-full.privateip.net, port: 3001, type: vmess, uuid: 98a1885d-27fd-4b6b-9cc0-6c9da8c1431c, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: UK2-🇬🇧-, server: uk2-full.privateip.net, port: 443, type: vmess, uuid: a9f5d9ea-d23f-4c60-8535-9ecb869291da, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: UK-🇬🇧-, server: uk-full.privateip.net, port: 443, type: vmess, uuid: 3033d51d-2719-4672-8660-8aacb8d13848, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: UK3-🇬🇧-, server: uk3-full.privateip.net, port: 443, type: vmess, uuid: 28d94c1b-ba54-4074-860f-33e2dd40535b, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
@@ -50,6 +50,8 @@ proxies:
   - {name: NL-🇳🇱-, server: nl-full.privateip.net, port: 443, type: vmess, uuid: 411e6b72-30df-4397-aa04-2a8aca27dbdf, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: NL3-🇳🇱-, server: nl3-full.privateip.net, port: 443, type: vmess, uuid: f1abfc1b-97fc-42fd-b721-c1a180f29867, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: CA-🇨🇦-, server: ca-full.privateip.net, port: 443, type: vmess, uuid: 4f15844e-c731-49b0-b7f0-ad89ca3a68a2, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
+  - {name: JP-🇯🇵-, server: jp-full.privateip.net, port: 443, type: vmess, uuid: d2e1e357-d4b0-4b85-b59d-83094ff3e5f7, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
+  - {name: HK-🇭🇰-, server: hk-full.privateip.net, port: 443, type: vmess, uuid: 5e96b77f-b64e-46bf-9377-5ff0eea3d5bb, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
 
 proxy-groups:
   - name: Proxy
@@ -69,6 +71,8 @@ proxy-groups:
       - NL-🇳🇱-
       - NL3-🇳🇱-
       - CA-🇨🇦-
+      - JP-🇯🇵-
+      - HK-🇭🇰-
 
 rules:
 # (Proxy)
