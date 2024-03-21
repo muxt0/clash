@@ -128,7 +128,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: FR-🇫🇷-
+  - name: NL-🇳🇱-يومي
     server: trojan-dis-nl01.globalssh.xyz
     port: 443
     type: trojan
@@ -158,7 +158,7 @@ proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - FR-🇫🇷-
+      - NL-🇳🇱-يومي
       - DE-🇩🇪-
       - UK-🇬🇧-
       - DIRECT
@@ -726,8 +726,6 @@ rules:
  - DOMAIN-SUFFIX,ying.com,Proxy
  - DOMAIN-SUFFIX,yoyo.org,Proxy
  - DOMAIN-SUFFIX,ytimg.com,Proxy
-
- - DOMAIN,oodi.iq,DIRECT
  
 # > Final
  - MATCH,Proxy
