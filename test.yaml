@@ -57,7 +57,7 @@ proxy-groups:
       - FR-🇫🇷-
       - NL2-🇳🇱-
       - NL-🇳🇱-
-      _ NL3-🇳🇱-
+      - NL3-🇳🇱-
 
 rules:
 # (Proxy)
