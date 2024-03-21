@@ -2,171 +2,50 @@ port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
-tproxy-port: 7895
-ipv6: false
 mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: ""
 bind-address: "*"
-unified-delay: true
-profile:
-  store-selected: true
-  store-fake-ip: true
+ipv6: false
 dns:
   enable: true
   ipv6: false
-  use-host: true
-  enhanced-mode: fake-ip
-  listen: 0.0.0.0:7874
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
   nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
+    - https://puredns.org/dns-query
+    - tls://puredns.org:853
   fallback:
-    - 1.1.1.1
-    - 8.8.4.4
-    - https://cloudflare-dns.com/dns-query
-    - 112.215.203.254
-  default-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-    - 112.215.203.254
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
-    - time.*.com
-    - time.*.gov
-    - time.*.edu.cn
-    - time.*.apple.com
-    - time1.*.com
-    - time2.*.com
-    - time3.*.com
-    - time4.*.com
-    - time5.*.com
-    - time6.*.com
-    - time7.*.com
-    - ntp.*.com
-    - ntp1.*.com
-    - ntp2.*.com
-    - ntp3.*.com
-    - ntp4.*.com
-    - ntp5.*.com
-    - ntp6.*.com
-    - ntp7.*.com
-    - "*.time.edu.cn"
-    - "*.ntp.org.cn"
-    - +.pool.ntp.org
-    - time1.cloud.tencent.com
-    - music.163.com
-    - "*.music.163.com"
-    - "*.126.net"
-    - musicapi.taihe.com
-    - music.taihe.com
-    - songsearch.kugou.com
-    - trackercdn.kugou.com
-    - "*.kuwo.cn"
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - y.qq.com
-    - "*.y.qq.com"
-    - streamoc.music.tc.qq.com
-    - mobileoc.music.tc.qq.com
-    - isure.stream.qqmusic.qq.com
-    - dl.stream.qqmusic.qq.com
-    - aqqmusic.tc.qq.com
-    - amobile.music.tc.qq.com
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - music.migu.cn
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - msftconnecttest.com
-    - msftncsi.com
-    - localhost.ptlogin2.qq.com
-    - localhost.sec.qq.com
-    - +.srv.nintendo.net
-    - +.stun.playstation.net
-    - xbox.*.microsoft.com
-    - xnotify.xboxlive.com
-    - +.battlenet.com.cn
-    - +.wotgame.cn
-    - +.wggames.cn
-    - +.wowsgame.cn
-    - +.wargaming.net
-    - proxy.golang.org
-    - stun.*.*
-    - stun.*.*.*
-    - +.stun.*.*
-    - +.stun.*.*.*
-    - +.stun.*.*.*.*
-    - heartbeat.belkin.com
-    - "*.linksys.com"
-    - "*.linksyssmartwifi.com"
-    - "*.router.asus.com"
-    - mesu.apple.com
-    - swscan.apple.com
-    - swquery.apple.com
-    - swdownload.apple.com
-    - swcdn.apple.com
-    - swdist.apple.com
-    - lens.l.google.com
-    - stun.l.google.com
-    - +.nflxvideo.net
-    - "*.square-enix.com"
-    - "*.finalfantasyxiv.com"
-    - "*.ffxiv.com"
-    - "*.mcdn.bilivideo.cn"
-    - +.media.dssott.com
+    - tcp://108.137.44.39
+    - tcp://108.137.44.9
+    - 108.137.44.39
+    - 108.137.44.9
+tun:
+  enable: true
+  stack: system 
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+  dns-hijack:
+    - tcp://108.137.44.39:53
+experimental:
+  interface-name: en0
+
 proxies:
-  - name: 🇳🇱-يومي-
-    server: trojan-dis-nl01.globalssh.xyz
-    port: 443
-    type: trojan
-    password: fb34cc00-2270-4282-9896-eec18dec27a3
-    skip-cert-verify: true
-    ws=true
-    tls=true
-    udp-relay=false
-    sni: m.facebook.com
-    udp: true
-
-  - name: 🇩🇪-يومي-
-    server: trojan-ovh-ca01.globalssh.xyz
-    port: 443
-    type: trojan
-    password: 136c8d21-edfa-423e-b84a-b203721e1786
-    skip-cert-verify: true
-    ws: true
-    ws-path: /trojan-ws
-    sni: m.facebook.com
-    tls: true
-    udp: true
-
-  - name: 🇨🇦-يومي-
-    server: uk1.test3.net
-    port: 443
-    type: trojan
-    password: da03eff0-a2e6-11ee-a433-1239d0255272
-    skip-cert-verify: true
-    sni: graph.instagram.com
-    udp: true
+  - {name: CA🇨🇦يومي, server: trojan-ovh-ca01.globalssh.xyz, port: 443, type: trojan, password: 136c8d21-edfa-423e-b84a-b203721e1786, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: NL🇳🇱يومي, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: DE🇩🇪يومي, server: trojan-adv-de01.globalssh.xyz, port: 443, type: trojan, password: d7952670-91fc-4e96-bd27-e4461dc0b7dc, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
 proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - 🇳🇱-يومي-
-      - 🇩🇪-يومي-
-      - 🇨🇦-يومي-
+      - CA🇨🇦يومي
+      - NL🇳🇱يومي
+      - DE🇩🇪يومي
       - DIRECT
 rules:
 # (Proxy)
@@ -434,6 +313,19 @@ rules:
  - DOMAIN-SUFFIX,readyatdawn.com,DIRECT
  - DOMAIN-SUFFIX,rocksdb.org,DIRECT
  - DOMAIN-KEYWORD,.fbcdn.,DIRECT
+ - DOMAIN-SUFFIX,acconunkit.com,DIRECT
+ - DOMAIN-SUFFIX,facebook.com,DIRECT
+ - DOMAIN-SUFFIX,facebook.net,DIRECT
+ - DOMAIN-SUFFIX,messenger.com,DIRECT
+ - DOMAIN-SUFFIX,fb.com,DIRECT
+ - DOMAIN-SUFFIX,fb.me,DIRECT
+ - DOMAIN-SUFFIX,m.me,DIRECT
+ - DOMAIN-SUFFIX,msngr.com,DIRECT
+ - DOMAIN-SUFFIX,fb.watch,DIRECT
+ - DOMAIN-SUFFIX,fbwat.ch,DIRECT
+ - DOMAIN-KEYWORD,.fbcdn.,DIRECT
+ - DOMAIN-SUFFIX,instagram.com,Proxy
+ - DOMAIN-SUFFIX,cdninstagram.com,Proxy
 
 # > Telegram
  - DOMAIN-SUFFIX,t.me,DIRECT
