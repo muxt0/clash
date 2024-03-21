@@ -134,7 +134,6 @@ proxies:
     type: trojan
     password: fb34cc00-2270-4282-9896-eec18dec27a3
     skip-cert-verify: true
-    path=/trojan-ws
     ws=true
     tls=true
     udp-relay=false
