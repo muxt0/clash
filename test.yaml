@@ -39,6 +39,7 @@ proxies:
   - {name: CA🇨🇦يومي, server: trojan-ovh-ca01.globalssh.xyz, port: 443, type: trojan, password: 136c8d21-edfa-423e-b84a-b203721e1786, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
   - {name: NL🇳🇱يومي, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
   - {name: DE🇩🇪يومي, server: trojan-adv-de01.globalssh.xyz, port: 443, type: trojan, password: d7952670-91fc-4e96-bd27-e4461dc0b7dc, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: FR-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 15cd0b5d-c944-4726-ab73-d5a0d11b13fa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
 proxy-groups:
   - name: Proxy
     type: select
@@ -46,6 +47,7 @@ proxy-groups:
       - CA🇨🇦يومي
       - NL🇳🇱يومي
       - DE🇩🇪يومي
+      - FR-🇫🇷-
       - DIRECT
 rules:
 # (Proxy)
