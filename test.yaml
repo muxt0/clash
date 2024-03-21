@@ -2,64 +2,166 @@ port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
 mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
+secret: ""
 bind-address: "*"
-ipv6: false
+unified-delay: true
+profile:
+  store-selected: true
+  store-fake-ip: true
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7894
-  fallback-filter:
-    geoip: false
-    ipcidr:
-    - 240.0.0.0/4
+  use-host: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
   nameserver:
-    - https://puredns.org/dns-query
-    - tls://puredns.org:853
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
   fallback:
-    - tcp://108.137.44.39
-    - tcp://108.137.44.9
-    - 108.137.44.39
-    - 108.137.44.9
-tun:
-  enable: true
-  stack: system 
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true
-  dns-hijack:
-    - tcp://108.137.44.39:53
-experimental:
-  interface-name: en0
-
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - xnotify.xboxlive.com
+    - +.battlenet.com.cn
+    - +.wotgame.cn
+    - +.wggames.cn
+    - +.wowsgame.cn
+    - +.wargaming.net
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - +.stun.*.*
+    - +.stun.*.*.*
+    - +.stun.*.*.*.*
+    - heartbeat.belkin.com
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - mesu.apple.com
+    - swscan.apple.com
+    - swquery.apple.com
+    - swdownload.apple.com
+    - swcdn.apple.com
+    - swdist.apple.com
+    - lens.l.google.com
+    - stun.l.google.com
+    - +.nflxvideo.net
+    - "*.square-enix.com"
+    - "*.finalfantasyxiv.com"
+    - "*.ffxiv.com"
+    - "*.mcdn.bilivideo.cn"
+    - +.media.dssott.com
 proxies:
-  - {name: DE2-🇩🇪-, server: de2-full.privateip.net, port: 443, type: vmess, uuid: 99b01e8f-6e08-468f-8e70-9d57770e0174, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
-  - {name: DE-🇩🇪-, server: de-full.privateip.net, port: 443, type: vmess, uuid: 6ebaaf37-e27f-4f52-8809-6ce049b12ec5, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
-  - {name: UK-🇬🇧-, server: uk-full.privateip.net, port: 443, type: vmess, uuid: 67577be5-1f0c-4642-a7df-c29f9c727e5b, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
-  - {name: CA-🇨🇦-, server: ca-full.privateip.net, port: 443, type: vmess, uuid: de4f7ea9-3d4d-481e-b149-aadccc0801dd, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: c9ba4cfc-6945-4646-888f-5ca083ed7c53, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: FR-🇫🇷-, server: fr-full.privateip.net, port: 3001, type: vmess, uuid: f0fffb1b-8032-4548-8efb-e8700e31bddb, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: NL2-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: a1d7b50c-9aae-4bd1-a0ab-b077397d263e, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: NL-🇳🇱-, server: eua1.xv2ray.net, port: 443, type: vmess, uuid: 2d50a75c-014a-4a23-a477-3e9c5428b27e, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: NL, server: trojan-dis-nl01.globalssh.xyz, port: 443, udp: true, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, sni: m.facebook.com, skip-cert-verify: true}}}
+  - name: FR-🇫🇷-
+    server: trojan-dis-nl01.globalssh.xyz
+    port: 443
+    type: trojan
+    password: fb34cc00-2270-4282-9896-eec18dec27a3
+    skip-cert-verify: true
+    sni: m.facebook.com
+    udp: true
 
+  - name: DE-🇩🇪-
+    server: de1.test3.net
+    port: 443
+    type: trojan
+    password: 9bbd7950-a2e6-11ee-a437-1239d0255272
+    skip-cert-verify: true
+    sni: graph.instagram.com
+    udp: true
+
+  - name: UK-🇬🇧-
+    server: uk1.test3.net
+    port: 443
+    type: trojan
+    password: da03eff0-a2e6-11ee-a433-1239d0255272
+    skip-cert-verify: true
+    sni: graph.instagram.com
+    udp: true
 proxy-groups:
   - name: Proxy
     type: select
     proxies:
-      - DE2-🇩🇪-
+      - FR-🇫🇷-
       - DE-🇩🇪-
       - UK-🇬🇧-
-      - CA-🇨🇦-
-      - FR2-🇫🇷-
-      - FR-🇫🇷-
-      - NL2-🇳🇱-
-      - NL-🇳🇱-
-      - NL
-
+      - DIRECT
 rules:
 # (Proxy)
 # > WhatsApp
