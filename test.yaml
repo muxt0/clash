@@ -44,7 +44,7 @@ proxies:
   - {name: FR-🇫🇷-, server: fr-full.privateip.net, port: 3001, type: vmess, uuid: f0fffb1b-8032-4548-8efb-e8700e31bddb, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: NL2-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: a1d7b50c-9aae-4bd1-a0ab-b077397d263e, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
   - {name: NL-🇳🇱-, server: eua1.xv2ray.net, port: 443, type: vmess, uuid: 2d50a75c-014a-4a23-a477-3e9c5428b27e, sni: m.facebook.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: m.facebook.com}}}
-  - {name: NL3-🇳🇱-, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, ws: true, udp-relay: true, ws-path: /trojan-ws, skip-cert-verify: true, sni: www.telegram.org}
+  - {name: NL3-🇳🇱-, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, ws: true, udp-relay: true, ws-path: /trojan-ws, skip-cert-verify: true, sni: www.telegram.org}}}
 proxy-groups:
   - name: Proxy
     type: select
