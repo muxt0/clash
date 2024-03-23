@@ -43,7 +43,7 @@ proxies:
   - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 15cd0b5d-c944-4726-ab73-d5a0d11b13fa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
   - {name: TR-🇹🇷-, server: tr-full.privateip.net, port: 443, type: vmess, uuid: a6fd1240-d87b-4ea2-bacd-ac329b54bc43, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
   - {name: UA-🇺🇦-, server: ua-full.privateip.net, port: 443, type: vmess, uuid: 2ee11710-87ba-4b42-92e3-61948315eeea, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
-  - {name: NL-🇳🇱-, server: nl-full.privateip.net, port: 443, type: vmess, uuid: c0fa6e21-58ed-48ac-ab93-444a820b3f2e, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+  - {name: NL-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: b434c629-61b0-467d-b685-842138c55773, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
 proxy-groups:
   - name: Proxy
     type: select
@@ -72,7 +72,7 @@ rules:
  - DOMAIN-SUFFIX,whatsapp.cc,DIRECT
  - DOMAIN-SUFFIX,whatsappbrand.com,DIRECT
  - DOMAIN-KEYWORD,.whatsapp.,DIRECT
- - DOMAIN-SUFFIX,31.13.93.33:5222,DIRECT
+ - DOMAIN-SUFFIX,31.13.93.33,DIRECT
 
  - IP-CIDR,3.33.221.48/32,DIRECT
  - IP-CIDR,3.33.252.61/32,DIRECT
@@ -303,6 +303,7 @@ rules:
  - IP-CIDR,185.60.218.53/32,DIRECT
  - IP-CIDR,185.60.218.54/32,DIRECT
  - IP-CIDR,185.60.219.60/31,DIRECT
+ - IP-CIDR,151.236.175.0/24,REJECT
 
 # > 抗 DNS 污染 
  - DOMAIN-KEYWORD,amazon,Proxy
@@ -335,9 +336,10 @@ rules:
  - DOMAIN-SUFFIX,msngr.com,DIRECT
  - DOMAIN-SUFFIX,fb.watch,DIRECT
  - DOMAIN-SUFFIX,fbwat.ch,DIRECT
- - DOMAIN-KEYWORD,.fbcdn.,DIRECT
  - DOMAIN-SUFFIX,instagram.com,Proxy
  - DOMAIN-SUFFIX,cdninstagram.com,Proxy
+ - DOMAIN-KEYWORD,.fbcdn.,DIRECT
+ - DOMAIN-KEYWORD,.facebook.com,DIRECT
 
  - IP-CIDR,163.70.128.0/17,DIRECT
  - IP-CIDR,157.240.250.0/24,DIRECT
