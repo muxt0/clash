@@ -26,19 +26,3 @@ proxies:
     path: /isipath
     headers:
       Host: isiserver
-- name: VM-Akun
-  type: vless
-  server: 2026jrj.perfax.workers.dev
-  port: 443
-  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: 2026jrj.perfax.workers.dev
-  network: ws
-  ws-opts:
-    path: /isipath
-    headers:
-      Host: 2026jrj.perfax.workers.dev
