@@ -1,28 +1,79 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+bind-address: "*"
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
+  nameserver:
+    - https://puredns.org/dns-query
+    - tls://puredns.org:853
+  fallback:
+    - tcp://108.137.44.39
+    - tcp://108.137.44.9
+    - 108.137.44.39
+    - 108.137.44.9
+tun:
+  enable: true
+  stack: system 
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+  dns-hijack:
+    - tcp://108.137.44.39:53
+experimental:
+  interface-name: en0
+
 proxies:
-- name: GRPC-Akun
-  type: trojan
-  server: isiserver/bug
-  port: 443
-  password: isipassword
-  udp: true
-  sni: isiserver/bug
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: isiservice
-- name: VM-Akun
-  type: vmess
-  server: isiserver/bug
-  port: 443
-  uuid: isiuuid
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  skip-cert-verify: true
-  servername: isiserver/bug
-  network: ws
-  ws-opts:
-    path: /isipath
-    headers:
-      Host: isiserver
+  - {name: CA🇨🇦يومي, server: trojan-ovh-ca01.globalssh.xyz, port: 443, type: trojan, password: 136c8d21-edfa-423e-b84a-b203721e1786, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: NL🇳🇱يومي, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: DE🇩🇪يومي, server: trojan-adv-de01.globalssh.xyz, port: 443, type: trojan, password: d7952670-91fc-4e96-bd27-e4461dc0b7dc, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: FR1-🇫🇷-, server: fr-full.privateip.net, port: 443, type: vmess, uuid: 4a87b9b5-bebc-4f07-ac20-4517396f10d0, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
+  - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 15cd0b5d-c944-4726-ab73-d5a0d11b13fa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
+  - {name: TR-🇹🇷-, server: tr-full.privateip.net, port: 443, type: vmess, uuid: a6fd1240-d87b-4ea2-bacd-ac329b54bc43, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+  - {name: UA-🇺🇦-, server: ua-full.privateip.net, port: 443, type: vmess, uuid: 2ee11710-87ba-4b42-92e3-61948315eeea, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+  - {name: NL-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: b434c629-61b0-467d-b685-842138c55773, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - CA🇨🇦يومي
+      - NL🇳🇱يومي
+      - DE🇩🇪يومي
+      - DIRECT
+      - FR1-🇫🇷-
+      - FR2-🇫🇷-
+      - TR-🇹🇷-
+      - UA-🇺🇦-
+      - NL-🇳🇱-
+
+rules:
+ - RULE-SET,ads,REJECT
+ - RULE-SET,direct,DIRECT
+ - RULE-SET,gamesdomain,DIRECT
+# > Final
+ - MATCH,Proxy
+rule-providers:
+  ads:
+    type: file
+    behavior: domain
+    path: ./rule/ads.yaml
+  direct:
+    type: file
+    behavior: classical
+    path: ./rule/direct.yaml
+  gamesdomain:
+    type: file
+    behavior: domain
+    path: ./rule/gamesdomain.yaml
