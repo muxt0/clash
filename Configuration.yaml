@@ -1,397 +1,85 @@
-#Clash莫离配置
-#配置地址：https://github.com/Moli-X/Resources/raw/main/Clash/Clash.yml
-# GitHub仓库地址：https://github.com/Moli-X  发现BUG请反馈: @GodMoliibot  
-# 相关频道: https://t.me/QuantX  
-# 相关群组：https://t.me/Skill_XX
-# 图标备用📮✉️📪📬💫💬💥🔨🥼🚫🔰🙈🍎🎬📺🎱🍐🐝🦁💡🌵🐯🎸💻📽🌏🕹📡🦑🌟🐷🦒🐳🚦📵🎧💊🔓🚦🚥🐼⛔️🈲🌐🎯🖲️🐦🔞🎵📱🚀💳♻️🙈🍱🔂📦🔀⏱
-
-
-mixed-port: 7890
-allow-lan: false
-bind-address: '*'
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
 mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
-hosts:
-  'mtalk.google.com': 108.177.125.188
-  'dl.google.com': 180.163.151.161
-  'dl.l.google.com': 180.163.151.161
-profile:
-  store-selected: false
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+bind-address: "*"
+ipv6: false
 dns:
   enable: true
   ipv6: false
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  default-nameserver: 
-   - 223.5.5.5
-   - 119.29.29.29
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - localhost.ptlogin2.qq.com
-    - '+.srv.nintendo.net'
-    - '+.stun.playstation.net'
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.xboxlive.com'
-    - 'msftconnecttest.com'
-    - 'xbox.*.microsoft.com'
-    - '*.battlenet.com.cn'
-    - '*.battlenet.com'
-    - '*.blzstatic.cn'
-    - '*.battle.net'
-    - '*.trendmicro.com'
-    - '*.deltaww.com'
-    - '*.microsoft.com'
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
+  nameserver:
+    - https://puredns.org/dns-query
+    - tls://puredns.org:853
+  fallback:
+    - tcp://108.137.44.39
+    - tcp://108.137.44.9
+    - 108.137.44.39
+    - 108.137.44.9
+tun:
+  enable: true
+  stack: system 
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+  dns-hijack:
+    - tcp://108.137.44.39:53
+experimental:
+  interface-name: en0
 
-  nameserver: 
-    - 'https://doh.pub/dns-query'
-    - 'https://223.5.5.5/dns-query'
-  fallback: 
-    - 'https://doh.dns.sb/dns-query'
-    - 'https://1.1.1.1/dns-query'
-    - 'tls://8.8.4.4:853'
-  fallback-filter: 
-    geoip: true
-    geoip-code: CN
-
-
-proxies: null
-
-
-proxy-providers:
-# 把█████████████换成你的订阅链接
-  Subscribe:
-    type: http
-    url: █████████████
-    interval: 86400
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 1800
-      url: http://www.gstatic.com/generate_204
-  HKSub:
-    filter: 港|HK|(?i)Hong
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  TWSub:
-    filter: 台|TW|(?i)Taiwan
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  SGSub:
-    filter: 新|狮|獅|SG|(?i)Singapore
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  JPSub:
-    filter: 日|JP|(?i)Japan
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-  USSub:
-    filter: 美|US|(?i)States|American
-    type: file
-    path: ./GLlist.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
+proxies:
+  - {name: CA🇨🇦يومي, server: trojan-ovh-ca01.globalssh.xyz, port: 443, type: trojan, password: 136c8d21-edfa-423e-b84a-b203721e1786, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: NL🇳🇱يومي, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: DE🇩🇪يومي, server: trojan-adv-de01.globalssh.xyz, port: 443, type: trojan, password: d7952670-91fc-4e96-bd27-e4461dc0b7dc, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
+  - {name: FR1-🇫🇷-, server: fr-full.privateip.net, port: 443, type: vmess, uuid: 4a87b9b5-bebc-4f07-ac20-4517396f10d0, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
+  - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 15cd0b5d-c944-4726-ab73-d5a0d11b13fa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
+  - {name: TR-🇹🇷-, server: tr-full.privateip.net, port: 443, type: vmess, uuid: a6fd1240-d87b-4ea2-bacd-ac329b54bc43, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+  - {name: UA-🇺🇦-, server: ua-full.privateip.net, port: 443, type: vmess, uuid: 2ee11710-87ba-4b42-92e3-61948315eeea, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
+  - {name: NL-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: b434c629-61b0-467d-b685-842138c55773, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
 proxy-groups:
-  - name: "全球服务"
-    type: url-test
-    use:
-      - Subscribe
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-
-  - name: "香港服务"
-    type: url-test
-    use:
-    - HKSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "台湾服务"
-    type: url-test
-    use:
-    - TWSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "日本服务"
-    type: url-test
-    use:
-    - JPSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-  - name: "美国服务"
-    type: url-test
-    use:
-    - USSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-  - name: "新加坡服"
-    type: url-test
-    use:
-    - SGSub
-    url: http://www.gstatic.com/generate_204
-    interval: 900
-
-
-
-  - name: "全球加速"
+  - name: Proxy
     type: select
     proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
-      - 台湾服务
-      - 日本服务
-
-  - name: "人工智能"
-    type: select
-    proxies:
-      - 日本服务
-      - 美国服务
-      - 台湾服务
-      - 香港服务
-      - 全球服务
-
-  - name: "中国媒体"
-    type: select
-    proxies:
-      - 全国直连
-      - 全球服务
-      - 香港服务
-      - 美国服务
-
-
-  - name: "国际媒体"
-    type: select
-    proxies:
-      - 全球服务
-      - 香港服务
-      - 美国服务
-      - 全国直连
-
-  - name: "微软服务"
-    type: select
-    proxies:
-      - 全国直连
-      - 全球服务
-      - 台湾服务
-      - 香港服务
-
-
-  - name: 全国直连
-    type: select
-    proxies:
+      - CA🇨🇦يومي
+      - NL🇳🇱يومي
+      - DE🇩🇪يومي
       - DIRECT
-
-  - name: 拦截服务
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
-rule-providers:
-
-  Direct:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Direct.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-
-  Lan:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Lan.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Unbreak:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Unbreak.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  OpenAI:
-    type: http
-    behavior: classical
-    path: ./RuleSet/OpenAI.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Bing:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Bing.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Google:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Google.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Microsoft:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Microsoft.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400 
-
-  Github:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Github.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Video:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Video.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Telegram:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Extra/Telegram/Telegram.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Streaming:
-    type: http
-    behavior: classical
-    path: ./RuleSet/StreamingMedia/Streaming.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Discord:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Discord.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Global:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Global.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  China:
-    type: http
-    behavior: classical
-    path: ./RuleSet/China.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  ChinaIP:
-    type: http
-    behavior: ipcidr
-    path: ./RuleSet/Extra/ChinaIP.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Advertising:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Guard/Advertising.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/ads.yaml
-    interval: 86400
-
-
-  Privacy:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Guard/Privacy.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  HKlist:
-    type: http
-    behavior: classical
-    path: ./RuleSet/HKlist.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
-    interval: 86400
-
-  Reject:
-    type: http
-    behavior: classical
-    path: ./RuleSet/Reject.yaml
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/ads.yaml
-    interval: 86400
-
+      - FR1-🇫🇷-
+      - FR2-🇫🇷-
+      - TR-🇹🇷-
+      - UA-🇺🇦-
+      - NL-🇳🇱-
 
 rules:
-  # > 应用分流
-  - PROCESS-NAME,lync.exe,DIRECT
-  - PROCESS-NAME,EXCEL.EXE,DIRECT
-  - PROCESS-NAME,WINWORD.EXE,DIRECT
-  - PROCESS-NAME,DIAInstaller.EXE,DIRECT
-  - PROCESS-NAME,Update.exe,DIRECT
-  - PROCESS-NAME,Microsoft Teams,DIRECT
-  
-  # > 小分流 Lan    - RULE-SET,Collection
-  - RULE-SET,Direct,DIRECT
-  - RULE-SET,Lan,DIRECT
-  - RULE-SET,Unbreak,DIRECT
-  - RULE-SET,Microsoft,微软服务
-  - RULE-SET,Video,中国媒体
-  - RULE-SET,Telegram,香港服务
-  - RULE-SET,Github,香港服务
-  - RULE-SET,OpenAI,人工智能
-  - RULE-SET,Bing,微软服务
-  - RULE-SET,Discord,全球加速
-  - RULE-SET,HKlist,香港服务
-
-  # > 大分流
-  - RULE-SET,China,DIRECT
-  - RULE-SET,Global,全球加速
-  - RULE-SET,Google,全球加速
-  - RULE-SET,Streaming,国际媒体
-
-  # > 去广告REJECT
-  - RULE-SET,Advertising,REJECT
-  - RULE-SET,Privacy,REJECT
-  - RULE-SET,Reject,拦截服务
-
-  # > 单分流  - DOMAIN-SUFFIX, - DOMAIN-KEYWORD, ,no-resolve
-  - GEOIP,CN,DIRECT
-  - MATCH,全球加速
+ - RULE-SET,ads,REJECT
+ - RULE-SET,direct,DIRECT
+ - RULE-SET,gamesdomain,DIRECT
+# > Final
+ - MATCH,Proxy
+rule-providers:
+  ads:
+    type: http
+    behavior: domain
+    path: ./rule/ads.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/ads.yaml
+  direct:
+    type: http
+    behavior: classical
+    path: ./rule/direct.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
+  gamesdomain:
+    type: http
+    behavior: domain
+    path: ./rule/gamesdomain.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/gamesdomain.yaml
