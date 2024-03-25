@@ -1,0 +1,28 @@
+proxies:
+- name: GRPC-Akun
+  type: trojan
+  server: isiserver/bug
+  port: 443
+  password: isipassword
+  udp: true
+  sni: isiserver/bug
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: isiservice
+- name: VM-Akun
+  type: vmess
+  server: isiserver/bug
+  port: 443
+  uuid: isiuuid
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: isiserver/bug
+  network: ws
+  ws-opts:
+    path: /isipath
+    headers:
+      Host: isiserver
