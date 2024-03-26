@@ -108,4 +108,4 @@ rules:
   - RULE-SET,direct,DIRECT
   - RULE-SET,gamesdomain,DIRECT
 # > Final
-  - MATCH,Proxy
+  - MATCH,PROXY
