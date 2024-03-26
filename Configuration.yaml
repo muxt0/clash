@@ -74,6 +74,7 @@ rule-providers:
 
 rules:
  - RULE-SET,ads,REJECT
+ - RULE-SET,proxy,PROXY
  - RULE-SET,direct,DIRECT
  - RULE-SET,gamesdomain,DIRECT
 # > Final
