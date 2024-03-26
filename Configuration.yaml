@@ -48,7 +48,7 @@ proxies:
     sni: m.facebook.com
     network: ws
 proxy-groups:
-  - name: Proxy
+  - name: proxy
     type: select
     proxies:
       - demusta-globalssh_trojan_ws_trojan-go_41002
