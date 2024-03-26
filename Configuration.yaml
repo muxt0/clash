@@ -47,6 +47,11 @@ proxies:
     type: trojan
     sni: m.facebook.com
     network: ws
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - demusta-globalssh_trojan_ws_trojan-go_41002
 rule-providers:
   ads:
     type: http
