@@ -36,34 +36,17 @@ experimental:
   interface-name: en0
 
 proxies:
-  - {name: CA🇨🇦يومي, server: trojan-ovh-ca01.globalssh.xyz, port: 443, type: trojan, password: 136c8d21-edfa-423e-b84a-b203721e1786, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
-  - {name: NL🇳🇱يومي, server: trojan-dis-nl01.globalssh.xyz, port: 443, type: trojan, password: fb34cc00-2270-4282-9896-eec18dec27a3, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
-  - {name: DE🇩🇪يومي, server: trojan-adv-de01.globalssh.xyz, port: 443, type: trojan, password: d7952670-91fc-4e96-bd27-e4461dc0b7dc, skip-cert-verify: true, udp: true, sni: gtq6.sct.sc-prod.net}
-  - {name: FR1-🇫🇷-, server: fr-full.privateip.net, port: 443, type: vmess, uuid: 4a87b9b5-bebc-4f07-ac20-4517396f10d0, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
-  - {name: FR2-🇫🇷-, server: fr2-full.privateip.net, port: 443, type: vmess, uuid: 15cd0b5d-c944-4726-ab73-d5a0d11b13fa, sni: gtq6.sct.sc-prod.net, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: gtq6.sct.sc-prod.net}}}
-  - {name: TR-🇹🇷-, server: tr-full.privateip.net, port: 443, type: vmess, uuid: a6fd1240-d87b-4ea2-bacd-ac329b54bc43, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
-  - {name: UA-🇺🇦-, server: ua-full.privateip.net, port: 443, type: vmess, uuid: 2ee11710-87ba-4b42-92e3-61948315eeea, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
-  - {name: NL-🇳🇱-, server: nl2-full.privateip.net, port: 443, type: vmess, uuid: b434c629-61b0-467d-b685-842138c55773, sni: www.telegram.org, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RACEVPN, headers: {Host: www.telegram.org}}}
-proxy-groups:
-  - name: Proxy
-    type: select
-    proxies:
-      - CA🇨🇦يومي
-      - NL🇳🇱يومي
-      - DE🇩🇪يومي
-      - DIRECT
-      - FR1-🇫🇷-
-      - FR2-🇫🇷-
-      - TR-🇹🇷-
-      - UA-🇺🇦-
-      - NL-🇳🇱-
-
-rules:
- - RULE-SET,ads,REJECT
- - RULE-SET,direct,DIRECT
- - RULE-SET,gamesdomain,DIRECT
-# > Final
- - MATCH,Proxy
+  - udp: true
+    ws-opts:
+      path: /trojan-ws
+    server: trojan-adv-de01.globalssh.xyz
+    password: d7952670-91fc-4e96-bd27-e4461dc0b7dc
+    skip-cert-verify: true
+    port: 443
+    name: demusta-globalssh_trojan_ws_trojan-go_41002
+    type: trojan
+    sni: m.facebook.com
+    network: ws
 rule-providers:
   ads:
     type: http
@@ -83,3 +66,10 @@ rule-providers:
     path: ./rule/gamesdomain.yaml
     interval: 86400
     url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/gamesdomain.yaml
+
+rules:
+ - RULE-SET,ads,REJECT
+ - RULE-SET,direct,DIRECT
+ - RULE-SET,gamesdomain,DIRECT
+# > Final
+ - MATCH,Proxy
