@@ -21,8 +21,8 @@
     },
     {
     "iconUrl": "https://www.google.com/s2/favicons?domain=https://fajer.show&sz=%size%",
-    "apiVersion": 1,
-    "repositoryUrl": "https://github.com/muxt0",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/muxt0",
         "fileSize": 16939,
         "status": 1,
         "language": "ar",
