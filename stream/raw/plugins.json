@@ -6,7 +6,7 @@
     "status": 1,
     "language": "ar",
     "authors": [
-        "kingslayer_007"
+        "YY-KO"
     ],
     "tvTypes": [
         "TvSeries",
@@ -17,4 +17,24 @@
     "internalName": "365 SHOW",
     "url": "https://github.com/aymanbest/Arabico/raw/main/build/365.cs3",
     "name": "365 SHOW"
-}]
+    },
+    {
+    "iconUrl": "https://www.google.com/s2/favicons?domain=https://fajer.show&sz=%size%",
+    "apiVersion": 1,
+    "repositoryUrl": "https://github.com/yoyzo/arab",
+    "fileSize": 16939,
+    "status": 1,
+    "language": "ar",
+    "authors": [
+        "YY-KO"
+    ],
+    "tvTypes": [
+        "TvSeries",
+        "Movie"
+    ],
+    "version": 3,
+    "internalName": "FajerShowProvider",
+    "url": "https://codeberg.org/Mark_Eshia/arab/raw/branch/builds/FajerShowProvider.cs3",
+    "name": "FajerShowProvider"
+    }
+]
