@@ -5,7 +5,7 @@
         "repositoryUrl": "https://github.com/muxt0",
         "fileSize": 16939,
         "status": 1,
-        "language": "ajp",
+        "language": "ar",
         "authors": [
             "YY-KO"
         ],
@@ -18,6 +18,25 @@
         "internalName": "365 SHOW",
         "url": "https://github.com/aymanbest/Arabico/raw/main/build/365.cs3",
         "name": "365 SHOW"
+    },
+    {
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.fushaar.com&sz=%size%",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/muxt0",
+        "fileSize": 11561,
+        "status": 1,
+        "language": "ar",
+        "authors": [
+            "YY-KO"
+        ],
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "version": 2,
+        "internalName": "FushaarProvider",
+        "url": "https://codeberg.org/Mark_Eshia/arab/raw/branch/builds/FushaarProvider.cs3",
+        "name": "FushaarProvider"
     },
     {
     "iconUrl": "https://www.google.com/s2/favicons?domain=https://fajer.show&sz=%size%",
