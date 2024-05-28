@@ -109,6 +109,6 @@ rule-providers:
 rules:
   - RULE-SET,ads,REJECT
   - RULE-SET,direct,DIRECT
-  - RULE-SET,gamesdomain,DIRECT
+  - RULE-SET,gamesdomain,CLASH
 # > Final
   - MATCH,CLASH
