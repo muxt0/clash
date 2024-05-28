@@ -92,16 +92,6 @@ proxy-groups:
       - 🇫🇷howdy
       - 🇩🇪howdy
       - DIRECT
-  - name: 🚫 ADs
-    type: select
-    proxies:
-      - REJECT
-      - CLASH
-  - name: 😡 WhatsApp
-    type: select
-    proxies:
-      - CLASH
-      - DIRECT
 rule-providers:
   ads:
     type: http
@@ -129,8 +119,8 @@ rule-providers:
     url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/gamesdomain.yaml
 
 rules:
-  - RULE-SET,WhatsApp,😡 WhatsApp
-  - RULE-SET,ads,🚫 ADs
+  - RULE-SET,WhatsApp,CLASH
+  - RULE-SET,ads,REJECT
   - RULE-SET,direct,DIRECT
   - RULE-SET,gamesdomain,CLASH
 # > Final
