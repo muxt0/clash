@@ -78,17 +78,30 @@ dns:
       - 0.0.0.0/32
 proxies:
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"dc5ce847-53cb-46ff-a667-468cadc31d8e","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"970aca0d-afb0-4932-ad16-eb81d575964a","sni":"www.telegram.org","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"eec2d3f2-3923-4392-adde-e910e209380a","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"bb3f0000-1c92-11ef-becb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
-  - {"name":"🇩🇪howdy","type":"trojan","server":"de2.test3.net","port":443,"udp":true,"password":"59957400-1c95-11ef-95aa-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
+  - {"name":"🇩🇪howdy","type":"trojan","server":"3.71.84.61","port":443,"udp":true,"password":"F30aVAqwjF","sni":"149.154.167.99","skip-cert-verify":true}
 proxy-groups:
   - name: CLASH
     type: select
     proxies:
       - 🇳🇱يومي
+      - يومي🇩🇪
       - يومي🇨🇦
       - 🇫🇷howdy
       - 🇩🇪howdy
+      - DIRECT
+  - name: 🚫 ADs
+    type: select
+    proxies:
+      - REJECT
+      - CLASH
+  - name: 😡 WhatsApp
+    type: select
+    proxies:
+      - CLASH
+      - DIRECT
 rule-providers:
   ads:
     type: http
@@ -96,6 +109,12 @@ rule-providers:
     path: ./rule/ads.yaml
     interval: 86400
     url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/ads.yaml
+  WhatsApp:
+    type: http
+    behavior: classical
+    path: ./rule/WhatsApp.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/muxt0/clash/main/Provide/WhatsApp.yaml
   direct:
     type: http
     behavior: classical
@@ -110,7 +129,8 @@ rule-providers:
     url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/gamesdomain.yaml
 
 rules:
-  - RULE-SET,ads,REJECT
+  - RULE-SET,WhatsApp,😡 WhatsApp
+  - RULE-SET,ads,🚫 ADs
   - RULE-SET,direct,DIRECT
   - RULE-SET,gamesdomain,CLASH
 # > Final
