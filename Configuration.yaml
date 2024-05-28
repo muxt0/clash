@@ -80,6 +80,7 @@ proxies:
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"dc5ce847-53cb-46ff-a667-468cadc31d8e","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"eec2d3f2-3923-4392-adde-e910e209380a","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"bb3f0000-1c92-11ef-becb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
+  - {"name":"🇩🇪howdy","type":"trojan","server":"de2.test3.net","port":443,"udp":true,"password":"59957400-1c95-11ef-95aa-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
 proxy-groups:
   - name: CLASH
     type: select
@@ -87,7 +88,7 @@ proxy-groups:
       - 🇳🇱يومي
       - يومي🇨🇦
       - 🇫🇷howdy
-      - DIRECT
+      - 🇩🇪howdy
 rule-providers:
   ads:
     type: http
