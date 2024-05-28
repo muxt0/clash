@@ -1,87 +1,91 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-mode: rule
-log-level: silent
+mixed-port: 7890
 allow-lan: true
+log-level: info
 external-controller: 0.0.0.0:9090
-bind-address: "*"
-ipv6: false
 dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7894
+  enabled: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - swscan.apple.com
+    - mesu.apple.com
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - +.music.163.com
+    - '*.126.net'
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - '*.kuwo.cn'
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - +.y.qq.com
+    - +.music.tc.qq.com
+    - aqqmusic.tc.qq.com
+    - +.stream.qqmusic.qq.com
+    - '*.xiami.com'
+    - +.music.migu.cn
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - +.xboxlive.com
+    - localhost.ptlogin2.qq.com
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - '*.mcdn.bilivideo.cn'
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   fallback-filter:
     geoip: false
     ipcidr:
-    - 240.0.0.0/4
-  nameserver:
-    - https://puredns.org/dns-query
-    - tls://puredns.org:853
-  fallback:
-    - tcp://108.137.44.39
-    - tcp://108.137.44.9
-    - 108.137.44.39
-    - 108.137.44.9
-tun:
-  enable: true
-  stack: system 
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true
-  dns-hijack:
-    - tcp://108.137.44.39:53
-experimental:
-  interface-name: en0
-
-proxy-groups:
-  - name: auto
-    type: select
-    proxies:
-      - CA🇨🇦يومي
-      - NL🇳🇱يومي
-      - DE🇩🇪يومي
-  - name: PROXY
-    type: select
-    proxies:
-      - CA🇨🇦يومي
-      - NL🇳🇱يومي
-      - DE🇩🇪يومي
+      - 240.0.0.0/4
+      - 0.0.0.0/32
 proxies:
-  - name: CA🇨🇦يومي
-    type: trojan
-    server: trojan-ovh-ca01.globalssh.xyz
-    port: 443
-    password: 136c8d21-edfa-423e-b84a-b203721e1786
-    sni: m.facebook.com
-    network: ws
-    skip-cert-verify: true
-    udp: true
-    ws-opts:
-      path: /trojan-ws
-  - name: NL🇳🇱يومي
-    type: trojan
-    server: trojan-dis-nl01.globalssh.xyz
-    port: 443
-    password: fb34cc00-2270-4282-9896-eec18dec27a3
-    sni: m.facebook.com
-    network: ws
-    skip-cert-verify: true
-    udp: true
-    ws-opts:
-      path: /trojan-ws
-  - name: DE🇩🇪يومي
-    type: trojan
-    server: trojan-adv-de02.globalssh.xyz
-    port: 443
-    password: d7952670-91fc-4e96-bd27-e4461dc0b7dc
-    sni: m.facebook.com
-    network: ws
-    skip-cert-verify: true
-    udp: true
-    ws-opts:
-      path: /trojan-ws
+  - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"dc5ce847-53cb-46ff-a667-468cadc31d8e","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"eec2d3f2-3923-4392-adde-e910e209380a","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+proxy-groups:
+  - name: CLASH
+    type: select
+    proxies:
+      - 🇳🇱يومي
+      - يومي🇨🇦
+      - DIRECT
 rule-providers:
   ads:
     type: http
@@ -103,9 +107,8 @@ rule-providers:
     url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/gamesdomain.yaml
 
 rules:
-  - IP-CIDR,10.10.0.0/16,auto
   - RULE-SET,ads,REJECT
   - RULE-SET,direct,DIRECT
   - RULE-SET,gamesdomain,DIRECT
 # > Final
-  - MATCH,PROXY
+  - MATCH,CLASH
