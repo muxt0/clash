@@ -19,7 +19,9 @@ payload:
  - IP-CIDR,149.154.164.0/22
  - IP-CIDR,45.142.38.0/24
  - IP-CIDR,5.28.192.0/18
- 
+ - IP-CIDR6,2001:b28:f23d::/48
+ - IP-CIDR6,2001:b28:f23f::/48
+
  - DOMAIN-SUFFIX,addlive.io
  - DOMAIN-SUFFIX,feelinsonice.com
  - DOMAIN-SUFFIX,sc-cdn.net
