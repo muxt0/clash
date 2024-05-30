@@ -77,20 +77,20 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
+  - {"name":"DE🇩🇪VIP","type":"vmess","server":"3.71.84.61","port":443,"cipher":"auto","uuid":"cb981935-7b6b-48ca-9e9b-99b509885fb3","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"dc5ce847-53cb-46ff-a667-468cadc31d8e","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"970aca0d-afb0-4932-ad16-eb81d575964a","sni":"www.telegram.org","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"eec2d3f2-3923-4392-adde-e910e209380a","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"bb3f0000-1c92-11ef-becb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
-  - {"name":"⭐️DE🇩🇪VIP⭐️","type":"trojan","server":"3.71.84.61","port":443,"udp":true,"password":"F30aVAqwjF","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true}
 proxy-groups:
   - name: CLASH
     type: select
     proxies:
+      - DE🇩🇪VIP
       - 🇳🇱يومي
       - يومي🇩🇪
       - يومي🇨🇦
       - 🇫🇷howdy
-      - ⭐️DE🇩🇪VIP⭐️
       - DIRECT
 rule-providers:
   ads:
