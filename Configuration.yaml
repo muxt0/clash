@@ -97,7 +97,6 @@ proxy-groups:
       - يومي🇩🇪
       - يومي🇨🇦
       - 🇫🇷howdy
-      - DIRECT
 rule-providers:
   WhatsApp:
     type: http
