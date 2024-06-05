@@ -30,6 +30,10 @@ payload:
  - IP-CIDR6,2001:b28:f23c::/48
  - IP-CIDR6,2a0a:f280::/32
 
+ - PROCESS-NAME,org.telegram.messenger
+ - PROCESS-NAME,org.telegram.messenger.web
+ - PROCESS-NAME,*telegram*
+
  - DOMAIN-SUFFIX,addlive.io
  - DOMAIN-SUFFIX,feelinsonice.com
  - DOMAIN-SUFFIX,sc-cdn.net
@@ -42,6 +46,9 @@ payload:
  - DOMAIN-SUFFIX,snapads.com
  - DOMAIN-SUFFIX,snapchat.com
  - DOMAIN-SUFFIX,snapkit.com
+
+ - PROCESS-NAME,com.snapchat.android
+ - PROCESS-NAME,*snapchat*
 
  - DOMAIN-SUFFIX,pubgmobile.com
  - DOMAIN-SUFFIX,igamecj.com
