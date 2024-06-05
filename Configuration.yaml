@@ -103,13 +103,13 @@ rule-providers:
     behavior: classical
     path: ./rule/WhatsApp.yaml
     interval: 86400
-    url: https://raw.githubusercontent.com/muxt0/clash/main/Provide/WhatsApp.yaml
+    url: https://raw.githubusercontent.com/muxt0/clash/conf/Provide/WhatsApp.yaml
   direct:
     type: http
     behavior: classical
     path: ./rule/direct.yaml
     interval: 86400
-    url: https://raw.githubusercontent.com/vipiraq2008/clash/main/Provide/direct.yaml
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/conf/Provide/direct.yaml
 
 rules:
   - RULE-SET,WhatsApp,CLASH
