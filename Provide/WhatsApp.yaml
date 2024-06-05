@@ -171,6 +171,9 @@ payload:
  - DOMAIN,whatsapp-cdn-shv-02-sin6.fbcdn.net
  - DOMAIN,www-cdn.whatsapp.net
 
+ - PROCESS-NAME,com.whatsapp
+ - PROCESS-NAME,*whatsapp*
+
  - IP-CIDR,3.33.221.48/32
  - IP-CIDR,3.33.252.61/32
  - IP-CIDR,15.197.206.217/32
