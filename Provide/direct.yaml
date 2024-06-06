@@ -53,3 +53,10 @@ payload:
  - DOMAIN-SUFFIX,pubgmobile.com
  - DOMAIN-SUFFIX,igamecj.com
  - DOMAIN,file-igamecj.akamaized.net
+
+ - DOMAIN-SUFFIX,instagr.am
+ - DOMAIN-SUFFIX,instagram.com
+ - DOMAIN-SUFFIX,cdninstagram.com
+
+ - PROCESS-NAME,com.instagram.android
+ - PROCESS-NAME,*instagram*
