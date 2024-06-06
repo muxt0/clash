@@ -113,9 +113,16 @@ rule-providers:
     path: ./rule/direct.yaml
     interval: 86400
     url: https://raw.githubusercontent.com/vipiraq2008/clash/conf/Provide/direct.yaml
+  instagram:
+    type: http
+    behavior: domain
+    path: ./rule/instagram.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/muxt0/clash/conf/Provide/Instagram.yaml
 
 rules:
   - RULE-SET,WhatsApp,CLASH
   - RULE-SET,direct,DIRECT
+  - RULE-SET,instagram,DIRECT
 # > Final
   - MATCH,CLASH
