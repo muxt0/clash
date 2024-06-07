@@ -1,4 +1,7 @@
 payload:
+ #MODIFICATION By: muxt
+
+ # Telegram
  - DOMAIN-SUFFIX,t.me
  - DOMAIN-SUFFIX,tx.me
  - DOMAIN-SUFFIX,telegram.org
@@ -35,6 +38,7 @@ payload:
  - PROCESS-NAME,org.telegram.messenger.web
  - PROCESS-NAME,*telegram*
 
+ # Snapchat
  - DOMAIN-SUFFIX,addlive.io
  - DOMAIN-SUFFIX,feelinsonice.com
  - DOMAIN-SUFFIX,sc-cdn.net
@@ -51,10 +55,12 @@ payload:
  - PROCESS-NAME,com.snapchat.android
  - PROCESS-NAME,*snapchat*
 
+ # PUBG
  - DOMAIN-SUFFIX,pubgmobile.com
  - DOMAIN-SUFFIX,igamecj.com
  - DOMAIN,file-igamecj.akamaized.net
 
+ # Instagram
  - DOMAIN-SUFFIX,instagr.am
  - DOMAIN-SUFFIX,instagram.com
  - DOMAIN-SUFFIX,cdninstagram.com
