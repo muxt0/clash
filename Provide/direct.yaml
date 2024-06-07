@@ -64,6 +64,7 @@ payload:
  - DOMAIN-SUFFIX,instagr.am
  - DOMAIN-SUFFIX,instagram.com
  - DOMAIN-SUFFIX,cdninstagram.com
+ - DOMAIN-KEYWORD,instagram
 
  - PROCESS-NAME,com.instagram.android
  - PROCESS-NAME,*instagram*
