@@ -77,11 +77,12 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-  - {"name":"DE🇩🇪VIP","type":"vmess","server":"3.77.192.111","port":443,"cipher":"auto","uuid":"32b614d5-aecd-4dbe-df3c-e5f79f084003","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
-  - {"name":"PUBG🇩🇪VIP","type":"vmess","server":"3.77.192.111","port":443,"cipher":"auto","uuid":"32b614d5-aecd-4dbe-df3c-e5f79f084003","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.pubgmobile.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.pubgmobile.com"}}}
-  - {"name":"TENCENT🇩🇪VIP","type":"vmess","server":"3.77.192.111","port":443,"cipher":"auto","uuid":"32b614d5-aecd-4dbe-df3c-e5f79f084003","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"tencentgames.helpshift.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"tencentgames.helpshift.com"}}}
-  - {"name":"INSTA🇩🇪VIP","type":"vmess","server":"3.77.192.111","port":443,"cipher":"auto","uuid":"32b614d5-aecd-4dbe-df3c-e5f79f084003","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.instagram.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.instagram.com"}}}
-  - {"name":"TELEGRAM🇩🇪VIP","type":"vmess","server":"3.77.192.111","port":443,"cipher":"auto","uuid":"32b614d5-aecd-4dbe-df3c-e5f79f084003","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.telegram.org","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.telegram.org"}}}
+  - {"name":"DE🇩🇪Vl","type":"vmess","server":"18.197.200.157","port":9443,"cipher":"auto","uuid":"438b95ed-0ab3-4107-f33a-5eae2d8eaaea","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"grpc","grpc-opts":{"grpc-service-name":"muxt","grpc-mode":"gun"}}
+  - {"name":"DE🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"PUBG🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.pubgmobile.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.pubgmobile.com"}}}
+  - {"name":"TENCENT🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"tencentgames.helpshift.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"tencentgames.helpshift.com"}}}
+  - {"name":"INSTA🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.instagram.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.instagram.com"}}}
+  - {"name":"TELEGRAM🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.telegram.org","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.telegram.org"}}}
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"402fad91-5e02-4e69-b194-224ac9924ede","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"0557e504-e5de-40ac-9a6b-d5b208c9d48d","sni":"www.telegram.org","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"977015ce-39ac-4e7e-8289-5f0e6f31b8e4","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
@@ -90,6 +91,7 @@ proxy-groups:
   - name: CLASH
     type: select
     proxies:
+      - DE🇩🇪Vl
       - DE🇩🇪VIP
       - PUBG🇩🇪VIP
       - TENCENT🇩🇪VIP
@@ -98,7 +100,6 @@ proxy-groups:
       - 🇳🇱يومي
       - يومي🇩🇪
       - يومي🇨🇦
-      - 🇫🇷howdy
       - DIRECT
 rule-providers:
   WhatsApp:
