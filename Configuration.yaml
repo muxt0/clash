@@ -77,30 +77,22 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-  - {"name":"DE🇩🇪Vl","type":"vmess","server":"18.197.200.157","port":9443,"cipher":"auto","uuid":"438b95ed-0ab3-4107-f33a-5eae2d8eaaea","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"grpc","grpc-opts":{"grpc-service-name":"muxt","grpc-mode":"gun"}}
-  - {"name":"DE🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
-  - {"name":"PUBG🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.pubgmobile.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.pubgmobile.com"}}}
-  - {"name":"TENCENT🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"tencentgames.helpshift.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"tencentgames.helpshift.com"}}}
-  - {"name":"INSTA🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.instagram.com","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.instagram.com"}}}
-  - {"name":"TELEGRAM🇩🇪VIP","type":"vmess","server":"18.197.200.157","port":443,"cipher":"auto","uuid":"5e21a804-6892-47b3-a36a-1a36bca3a2a5","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.telegram.org","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"www.telegram.org"}}}
+  - {"name":"DE🇩🇪إسبوعي","type":"vmess","server":"de-full.privateip.net","port":443,"cipher":"auto","uuid":"1a418913-2f27-4ed2-8302-112a18acc5b0","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"NL🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"1d04d5bb-9223-4916-bea6-e1a7d0a39d6b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"ed7f47e2-5736-406c-830e-f6477fa55149","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"6a071521-933a-4dca-b0f9-953fec6e997b","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"977015ce-39ac-4e7e-8289-5f0e6f31b8e4","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
-  - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"bb3f0000-1c92-11ef-becb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
+  - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"52353de0-2e5d-11ef-a1cb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
 proxy-groups:
   - name: CLASH
     type: select
     proxies:
-      - DE🇩🇪Vl
-      - DE🇩🇪VIP
-      - PUBG🇩🇪VIP
-      - TENCENT🇩🇪VIP
-      - INSTA🇩🇪VIP
-      - TELEGRAM🇩🇪VIP
+      - DE🇩🇪إسبوعي
+      - NL🇳🇱إسبوعي
       - 🇳🇱يومي
       - يومي🇩🇪
       - يومي🇨🇦
-      - DIRECT
+      - 🇫🇷howdy
 rule-providers:
   WhatsApp:
     type: http
