@@ -77,8 +77,9 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-  - {"name":"DE🇩🇪إسبوعي","type":"vmess","server":"de-full.privateip.net","port":443,"cipher":"auto","uuid":"1a418913-2f27-4ed2-8302-112a18acc5b0","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
-  - {"name":"NL🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"1d04d5bb-9223-4916-bea6-e1a7d0a39d6b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/muxt","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇩🇪إسبوعي","type":"vmess","server":"de-full.privateip.net","port":443,"cipher":"auto","uuid":"1a418913-2f27-4ed2-8302-112a18acc5b0","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"1d04d5bb-9223-4916-bea6-e1a7d0a39d6b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇩🇪greenssh","type":"vmess","server":"de1-vmess.greenssh.xyz","port":443,"cipher":"auto","uuid":"3aaae8c6-4712-4e43-a443-843d30fbf0f7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"ed7f47e2-5736-406c-830e-f6477fa55149","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"6a071521-933a-4dca-b0f9-953fec6e997b","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"977015ce-39ac-4e7e-8289-5f0e6f31b8e4","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
@@ -87,12 +88,14 @@ proxy-groups:
   - name: CLASH
     type: select
     proxies:
-      - DE🇩🇪إسبوعي
-      - NL🇳🇱إسبوعي
+      - 🇩🇪إسبوعي
+      - 🇳🇱إسبوعي
+      - 🇩🇪greenssh
       - 🇳🇱يومي
       - يومي🇩🇪
       - يومي🇨🇦
       - 🇫🇷howdy
+      - DIRECT
 rule-providers:
   WhatsApp:
     type: http
