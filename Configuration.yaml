@@ -96,6 +96,12 @@ proxy-groups:
       - يومي🇨🇦
       - 🇫🇷howdy
       - DIRECT
+  - name: SOCIAL
+    type: select
+    proxies:
+      - CLASH
+      - DIRECT
+      - REJECT
 rule-providers:
   WhatsApp:
     type: http
@@ -109,6 +115,12 @@ rule-providers:
     path: ./rule/direct.yaml
     interval: 86400
     url: https://raw.githubusercontent.com/vipiraq2008/clash/conf/Provide/direct.yaml
+  Tiktok:
+    type: http
+    behavior: classical
+    path: ./rule/Tiktok.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/conf/Provide/Tiktok.yaml
   instagram:
     type: http
     behavior: domain
@@ -119,6 +131,7 @@ rule-providers:
 rules:
   - RULE-SET,WhatsApp,CLASH
   - RULE-SET,direct,DIRECT
+  - RULE-SET,Tiktok,SOCIAL
   - RULE-SET,instagram,DIRECT
 # > Final
   - MATCH,CLASH
