@@ -77,6 +77,8 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
+  - {"name":"🇫🇷إسبوعي","type":"vmess","server":"fr-full.privateip.net","port":443,"cipher":"auto","uuid":"3df30416-a570-4911-8441-889524a7c43e","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"2🇫🇷إسبوعي","type":"vmess","server":"fr2-full.privateip.net","port":443,"cipher":"auto","uuid":"1d567314-cc02-4256-afa7-b3f0fe3f6b0e","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"www.pubgmobile.com","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"www.pubgmobile.com"}}}
   - {"name":"🇩🇪إسبوعي","type":"vmess","server":"de-full.privateip.net","port":443,"cipher":"auto","uuid":"1a418913-2f27-4ed2-8302-112a18acc5b0","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"1d04d5bb-9223-4916-bea6-e1a7d0a39d6b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇩🇪greenssh","type":"vmess","server":"de1-vmess.greenssh.xyz","port":443,"cipher":"auto","uuid":"3aaae8c6-4712-4e43-a443-843d30fbf0f7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
@@ -88,6 +90,8 @@ proxy-groups:
   - name: CLASH
     type: select
     proxies:
+      - 🇫🇷إسبوعي
+      - 2🇫🇷إسبوعي
       - 🇩🇪إسبوعي
       - 🇳🇱إسبوعي
       - 🇩🇪greenssh
