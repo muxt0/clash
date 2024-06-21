@@ -1,0 +1,124 @@
+mixed-port: 7890
+allow-lan: true
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enabled: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - swscan.apple.com
+    - mesu.apple.com
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - +.music.163.com
+    - '*.126.net'
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - '*.kuwo.cn'
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - +.y.qq.com
+    - +.music.tc.qq.com
+    - aqqmusic.tc.qq.com
+    - +.stream.qqmusic.qq.com
+    - '*.xiami.com'
+    - +.music.migu.cn
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - +.xboxlive.com
+    - localhost.ptlogin2.qq.com
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - '*.mcdn.bilivideo.cn'
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback-filter:
+    geoip: false
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+proxies:
+  - {"name":"🇩🇪إسبوعي","type":"vmess","server":"de-full.privateip.net","port":443,"cipher":"auto","uuid":"1a418913-2f27-4ed2-8302-112a18acc5b0","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"1d04d5bb-9223-4916-bea6-e1a7d0a39d6b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇩🇪greenssh","type":"vmess","server":"de1-vmess.greenssh.xyz","port":443,"cipher":"auto","uuid":"3aaae8c6-4712-4e43-a443-843d30fbf0f7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"ed7f47e2-5736-406c-830e-f6477fa55149","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"6a071521-933a-4dca-b0f9-953fec6e997b","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"977015ce-39ac-4e7e-8289-5f0e6f31b8e4","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"52353de0-2e5d-11ef-a1cb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
+proxy-groups:
+  - name: CLASH
+    type: select
+    proxies:
+      - 🇩🇪إسبوعي
+      - 🇳🇱إسبوعي
+      - 🇩🇪greenssh
+      - 🇳🇱يومي
+      - يومي🇩🇪
+      - يومي🇨🇦
+      - 🇫🇷howdy
+      - DIRECT
+rule-providers:
+  WhatsApp:
+    type: http
+    behavior: classical
+    path: ./rule/WhatsApp.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/muxt0/clash/conf/Provide/WhatsApp.yaml
+  direct:
+    type: http
+    behavior: classical
+    path: ./rule/direct.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/vipiraq2008/clash/conf/Provide/direct.yaml
+  instagram:
+    type: http
+    behavior: domain
+    path: ./rule/instagram.yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/muxt0/clash/conf/Provide/Instagram.yaml
+
+rules:
+  - RULE-SET,WhatsApp,CLASH
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,instagram,DIRECT
+# > Final
+  - MATCH,CLASH
