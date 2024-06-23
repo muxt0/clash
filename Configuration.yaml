@@ -84,10 +84,9 @@ proxies:
   - {"name":"🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"3d66d33d-7c42-45a4-8eb6-21a554b87dcb","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"2🇳🇱إسبوعي","type":"vmess","server":"nl2-full.privateip.net","port":443,"cipher":"auto","uuid":"6a41c2f7-6fc1-45ae-9a3c-d7aab5ba8eef","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇩🇪greenssh","type":"vmess","server":"de1-vmess.greenssh.xyz","port":443,"cipher":"auto","uuid":"3aaae8c6-4712-4e43-a443-843d30fbf0f7","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
-  - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"ed7f47e2-5736-406c-830e-f6477fa55149","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
-  - {"name":"يومي🇩🇪","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"6a071521-933a-4dca-b0f9-953fec6e997b","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
-  - {"name":"يومي🇨🇦","type":"trojan","server":"trojan-ovh-ca01.globalssh.xyz","port":443,"udp":true,"password":"977015ce-39ac-4e7e-8289-5f0e6f31b8e4","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"52353de0-2e5d-11ef-a1cb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
+  - {"name":"🇺🇸يومي","type":"trojan","server":"trojan-rs-us02.globalssh.xyz","port":443,"udp":true,"password":"ffae25f3-2bc8-470f-bdd8-fc878ae1e54d","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"2🇺🇸يومي","type":"trojan","server":"trojan-rs-us03.globalssh.xyz","port":443,"udp":true,"password":"d4c955e0-6131-4cd0-b5ef-43380aea97f6","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
 proxy-groups:
   - name: CLASH
     type: select
@@ -99,11 +98,9 @@ proxy-groups:
       - 🇳🇱إسبوعي
       - 2🇳🇱إسبوعي
       - 🇩🇪greenssh
-      - 🇳🇱يومي
-      - يومي🇩🇪
-      - يومي🇨🇦
       - 🇫🇷howdy
-      - DIRECT
+      - 🇺🇸يومي
+      - 2🇺🇸يومي
   - name: SOCIAL
     type: select
     proxies:
