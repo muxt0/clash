@@ -83,10 +83,14 @@ proxies:
   - {"name":"2🇩🇪إسبوعي","type":"vmess","server":"de2-full.privateip.net","port":443,"cipher":"auto","uuid":"50b68499-fda4-4e56-bbfd-b608284f1a0f","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇳🇱إسبوعي","type":"vmess","server":"nl-full.privateip.net","port":443,"cipher":"auto","uuid":"3d66d33d-7c42-45a4-8eb6-21a554b87dcb","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"2🇳🇱إسبوعي","type":"vmess","server":"nl2-full.privateip.net","port":443,"cipher":"auto","uuid":"6a41c2f7-6fc1-45ae-9a3c-d7aab5ba8eef","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇸🇪إسبوعي","type":"vmess","server":"se-full.privateip.net","port":443,"cipher":"auto","uuid":"dfce7434-9994-47ee-8795-63c3a5d6bb39","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
+  - {"name":"🇹🇷إسبوعي","type":"vmess","server":"tr-full.privateip.net","port":443,"cipher":"auto","uuid":"6d2f1d2e-b85e-4730-a5e9-688475657c62","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/RACEVPN","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇩🇪greenssh","type":"vmess","server":"de1-vmess.greenssh.xyz","port":443,"cipher":"auto","uuid":"810ef130-b6af-4b5c-8062-4cef56e66e14","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"/vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"52353de0-2e5d-11ef-a1cb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
-  - {"name":"🇺🇸يومي","type":"trojan","server":"trojan-rs-us02.globalssh.xyz","port":443,"udp":true,"password":"ffae25f3-2bc8-470f-bdd8-fc878ae1e54d","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
-  - {"name":"2🇺🇸يومي","type":"trojan","server":"trojan-rs-us03.globalssh.xyz","port":443,"udp":true,"password":"d4c955e0-6131-4cd0-b5ef-43380aea97f6","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"🇺🇸يومي","type":"trojan","server":"trojan-rs-us03.globalssh.xyz","port":443,"udp":true,"password":"d4c955e0-6131-4cd0-b5ef-43380aea97f6","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"2🇺🇸يومي","type":"trojan","server":"trojan-rs-us01.globalssh.xyz","port":443,"udp":true,"password":"44a53086-7071-4f95-8ec3-6301fea60213","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"🇬🇧RaceVPN","type":"vmess","server":"uk-v2ray.ipracevpn.com","port":443,"cipher":"auto","uuid":"6869d6ef-a404-4334-813c-4bad5e82aa7c","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"tcp"}
+  - {"name":"🇩🇪RaceVPN","type":"vmess","server":"de-v2ray.ipracevpn.com","port":443,"cipher":"auto","uuid":"a5b6f7e8-aa82-43de-bdaa-1f42abde2648","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"tcp"}
 proxy-groups:
   - name: CLASH
     type: select
@@ -97,10 +101,14 @@ proxy-groups:
       - 2🇩🇪إسبوعي
       - 🇳🇱إسبوعي
       - 2🇳🇱إسبوعي
+      - 🇸🇪إسبوعي
+      - 🇹🇷إسبوعي
       - 🇩🇪greenssh
       - 🇫🇷howdy
       - 🇺🇸يومي
       - 2🇺🇸يومي
+      - 🇬🇧RaceVPN
+      - 🇩🇪RaceVPN
   - name: SOCIAL
     type: select
     proxies:
