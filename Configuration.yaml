@@ -78,9 +78,9 @@ dns:
       - 0.0.0.0/32
 proxies:
   - {"name":"🇳🇱يومي","type":"trojan","server":"trojan-dis-nl01.globalssh.xyz","port":443,"udp":true,"password":"8ffd6924-163e-4b2e-83df-e5a98cadf746","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
-  - {"name":"🇩🇪يومي","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"044af87d-2cbe-4e8d-8b73-86a422d7a616","sni":"tencentgames.helpshift.com","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"🇩🇪يومي","type":"trojan","server":"trojan-adv-de01.globalssh.xyz","port":443,"udp":true,"password":"044af87d-2cbe-4e8d-8b73-86a422d7a616","sni":"gtq6.sct.sc-prod.net","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇫🇷howdy","type":"trojan","server":"fr1.test3.net","port":443,"udp":true,"password":"52353de0-2e5d-11ef-a1cb-1239d0255272","sni":"www.telegram.org","skip-cert-verify":true}
-  - {"name":"🇨🇦يومي","type":"trojan","server":"trojan-rs-us02.globalssh.xyz","port":443,"udp":true,"password":"68e17937-3a14-477f-a456-cfaebfd83d24","sni":"tencentgames.helpshift.com","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
+  - {"name":"🇯🇵يومي","type":"trojan","server":"trojan-sis-jp01.globalssh.xyz","port":443,"udp":true,"password":"04c74809-c41d-498b-81e3-4604586b4f78","sni":"tencentgames.helpshift.com","skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"trojan-grpc"},"alpn":["h2"]}
   - {"name":"🇸🇪 connecton-se1","type":"vmess","server":"se1.connecton.surf","port":443,"cipher":"auto","uuid":"8f3c1afa-52a3-49d2-936c-5ca69b761e7f","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇫🇮 connecton-fi2","type":"vmess","server":"fi2.connecton.surf","port":443,"cipher":"auto","uuid":"9b4d8301-250d-4116-b3dd-c64e924b234b","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
   - {"name":"🇲🇽 connecton-mx1","type":"vmess","server":"mx1.connecton.surf","port":443,"cipher":"auto","uuid":"1cb9251d-6d5a-4fc3-8e79-d8fef314b225","alterId":0,"tls":true,"skip-cert-verify":true,"servername":"gtq6.sct.sc-prod.net","network":"ws","ws-opts":{"path":"vmess","headers":{"host":"gtq6.sct.sc-prod.net"}}}
@@ -104,7 +104,7 @@ proxy-groups:
       - 🇳🇱يومي
       - 🇩🇪يومي
       - 🇫🇷howdy
-      - 🇨🇦يومي
+      - 🇯🇵يومي
       - 🇸🇪 connecton-se1
       - 🇫🇮 connecton-fi2
       - 🇲🇽 connecton-mx1
